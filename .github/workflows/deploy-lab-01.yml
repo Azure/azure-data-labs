@@ -77,6 +77,8 @@ jobs:
 
       - name: Parse Terraform Environment Variables
         uses: ./.github/actions/parse-env-variables
+        with:
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Terraform Format
         uses: ./.github/actions/run-terraform-format

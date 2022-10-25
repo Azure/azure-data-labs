@@ -15,20 +15,20 @@ runs:
 
     # [Setup] task(s)
     # ---------------
-    # - name: "Setup agent"
-    #   shell: pwsh
-    #   run: |
-    #     # Grouping task logs
-    #     Write-Output "::group::Setup agent"
-    #     # Load used functions
-    #     . (Join-Path $env:GITHUB_WORKSPACE '.github' 'utils' 'Set-EnvironmentOnAgent.ps1')
-    #     # Define PS modules to install on the runner
-    #     $Modules = @(
-    #         @{ Name = 'powershell-yaml'; Version = '0.4.2'}
-    #     )
-    #     # Set agent up
-    #     Set-EnvironmentOnAgent -PSModules $Modules
-    #     Write-Output "::endgroup::"
+    - name: "Setup agent"
+      shell: pwsh
+      run: |
+        # Grouping task logs
+        Write-Output "::group::Setup agent"
+        # Load used functions
+        . (Join-Path $env:GITHUB_WORKSPACE '.github' 'utils' 'Set-EnvironmentOnAgent.ps1')
+        # Define PS modules to install on the runner
+        $Modules = @(
+            @{ Name = 'powershell-yaml'; Version = '0.4.2'}
+        )
+        # Set agent up
+        Set-EnvironmentOnAgent -PSModules $Modules
+        Write-Output "::endgroup::"
 
     # [Set environment variables] task(s)
     # ---------------

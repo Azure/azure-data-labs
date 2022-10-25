@@ -1,0 +1,29 @@
+# Resource name prefix
+prefix = "data-01"
+
+# Deployment location
+location = "North Europe"
+
+# Postfix
+postfix = "101"
+
+# Jumpbox login credentials
+jumphost_username = "azureuser"
+jumphost_password = "ThisIsNotVerySecure!"
+
+# Synapse SQL admin credentials
+synadmin_username = "sqladminuser"
+synadmin_password = "ThisIsNotVerySecure!"
+
+# Synapse AAD login credentials
+aad_login = {
+  name = "azureuser@contoso.com"
+  object_id = "00000000-0000-0000-0000-000000000000"
+  tenant_id = "00000000-0000-0000-0000-000000000000"
+}
+
+# Feature flags
+enable_synapse_sql_pool         = "false"
+enable_synapse_spark_pool       = "false"
+enable_data_factory             = "false"
+enable_analysis_services_server = "false"

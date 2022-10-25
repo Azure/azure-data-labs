@@ -1,0 +1,15 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: Create Resource Group
+description: --
+
+runs:
+  using: "composite"
+  steps:
+    - name: Create Resource Group
+      uses: azure/CLI@v1
+      with:
+        azcliversion: ${{ env.az_cli_version }}
+        inlineScript: |
+          az group create --location ${{ env.location }} --name ${{ env.terraform_st_resource_group }}

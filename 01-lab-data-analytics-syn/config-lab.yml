@@ -1,0 +1,22 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+variables:
+
+  # Global
+  prefix: "adl-01"
+  postfix: "101"
+  location: "northeurope"
+  
+  terraform_st_resource_group: rg-adl-terraform-state
+  terraform_st_storage_account: stadlterraformstate
+
+  # Feature flags
+  enable_analysis_services_server: "false"
+  enable_data_factory: "false"
+  enable_synapse_sql_pool: "false"
+  enable_synapse_spark_pool: "false"
+
+  # Internals - do not touch
+  az_cli_version: 2.36.0
+  terraform_st_container_name: default

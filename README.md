@@ -2,7 +2,7 @@
 
 Welcome to Azure Data Labs blueprints solution accelerator repository! This project is intended to serve as starting point for deploying different data, analytics & AI labs in Azure.
 
-> This repo uses [Azure Data Labs modules repository](https://github.com/microsoft/azure-labs-modules) within the /infra folder of each lab
+> This repo uses [Azure Data Labs modules repository](https://github.com/Azure/azure-data-labs-modules) within the /infra folder of each lab
 
 Each blueprint provides the following features:
 

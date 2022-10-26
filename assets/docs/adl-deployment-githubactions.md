@@ -19,6 +19,10 @@ If you want to use GitHub Actions for deploying the resources, add the following
 | Secret name | Value |
 | - | - |
 | `AZURE_CREDENTIALS` | the entire JSON output |
+| `ARM_CLIENT_ID` | `clientId` from JSON output |
+| `ARM_CLIENT_SECRET` | `clientSecret` from JSON output |
+| `ARM_SUBSCRIPTION_ID` | `subscriptionId` from JSON output |
+| `ARM_TENANT_ID` | `tenantId` from JSON output |
 | `USER_OBJECT_ID` | Your Azure AD `objectId` |
 | `USER_TENANT_ID` | Your Azure AD `tenantId` |
 | `USER_EMAIL` | Your Azure AD login name |

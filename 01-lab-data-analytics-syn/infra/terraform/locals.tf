@@ -16,10 +16,7 @@ locals {
     "privatelink.file.core.windows.net",
     "privatelink.dfs.core.windows.net",
     "privatelink.vaultcore.azure.net",
-    "privatelink.azurecr.io",
     "privatelink.servicebus.windows.net",
-    "privatelink.api.azureml.ms",
-    "privatelink.notebooks.azure.net",
     "privatelink.datafactory.azure.net",
     "privatelink.adf.azure.com",
     "privatelink.database.windows.net"

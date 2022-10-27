@@ -1,7 +1,7 @@
 # Resource group
 
 module "resource_group" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/resource-group"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/resource-group"
 
   basename = local.basename
   location = var.location
@@ -10,7 +10,7 @@ module "resource_group" {
 }
 
 module "resource_group_global_dns" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/resource-group"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/resource-group"
 
   basename = "${local.basename}-global-dns"
   location = var.location

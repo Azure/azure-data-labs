@@ -1,7 +1,7 @@
 # Machine learning workspace
 
 module "machine_learning_workspace" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/machine-learning/machine-learning-workspace"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-workspace"
 
   basename                = local.basename
   rg_name                 = module.resource_group.name
@@ -26,7 +26,7 @@ module "machine_learning_workspace" {
 # Machine learning Synapse Spark
 
 module "machine_learning_synapse_spark" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/machine-learning/machine-learning-synapse-spark"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-synapse-spark"
 
   basename                      = var.postfix
   location                      = module.resource_group.location
@@ -39,7 +39,7 @@ module "machine_learning_synapse_spark" {
 # Machine learning compute clusters
 
 module "machine_learning_compute_cluster_image-builder" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
 
   name                          = "image-builder"
   location                      = module.resource_group.location
@@ -50,7 +50,7 @@ module "machine_learning_compute_cluster_image-builder" {
 }
 
 module "machine_learning_compute_cluster_cpu_cluster" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
 
   name                          = "cpu-cluster"
   location                      = module.resource_group.location

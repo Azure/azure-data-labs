@@ -1,7 +1,7 @@
 # Storage Account
 
 module "storage_account_mlw" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/storage-account"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/storage-account"
 
   basename     = "${local.basename}mlw"
   rg_name      = module.resource_group.name
@@ -23,7 +23,7 @@ module "storage_account_mlw" {
 }
 
 module "storage_account_syn" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/storage-account"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/storage-account"
 
   basename     = "${local.basename}syn"
   rg_name      = module.resource_group.name

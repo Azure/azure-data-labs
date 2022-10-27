@@ -1,7 +1,7 @@
 # Virtual network
 
 module "virtual_network" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/virtual-network"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/virtual-network"
 
   basename      = local.basename
   rg_name       = module.resource_group.name
@@ -14,7 +14,7 @@ module "virtual_network" {
 # Subnets
 
 module "subnet_default" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/subnet"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
   name                                           = "snet-${var.prefix}-${var.postfix}-default"
   rg_name                                        = module.resource_group.name
@@ -24,7 +24,7 @@ module "subnet_default" {
 }
 
 module "subnet_bastion" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/subnet"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
   name             = "AzureBastionSubnet"
   rg_name          = module.resource_group.name

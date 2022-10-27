@@ -1,7 +1,7 @@
 # Bastion
 
 module "bastion" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/bastion-host"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/bastion-host"
 
   basename  = local.basename
   rg_name   = module.resource_group.name
@@ -16,7 +16,7 @@ module "bastion" {
 # Virtual machine
 
 module "virtual_machine_jumphost" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/virtual-machine"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/virtual-machine"
 
   basename          = local.basename
   rg_name           = module.resource_group.name

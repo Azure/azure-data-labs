@@ -1,7 +1,7 @@
 # Storage Account
 
 module "storage_account_syn" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/storage-account"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/storage-account"
 
   basename     = "${local.basename}-syn"
   rg_name      = module.resource_group.name

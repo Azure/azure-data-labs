@@ -1,7 +1,7 @@
 # Analysis Services
 
 module "analysis_services" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/analysis-services-server"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/analysis-services-server"
 
   basename = local.basename
   rg_name  = module.resource_group.name

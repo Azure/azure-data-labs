@@ -1,5 +1,5 @@
 # module "event_hubs_namespace" {
-#   source = "github.com/microsoft/azure-labs-modules/terraform/event-hubs/event-hubs-namespace"
+#   source = "github.com/Azure/azure-data-labs-modules/terraform/event-hubs/event-hubs-namespace"
 
 #   rg_name  = module.resource_group.name
 #   location = module.resource_group.location

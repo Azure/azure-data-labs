@@ -1,7 +1,7 @@
 # Virtual network
 
 module "virtual_network" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/virtual-network"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/virtual-network"
 
   basename      = local.basename
   rg_name       = module.resource_group.name
@@ -14,7 +14,7 @@ module "virtual_network" {
 # Subnets
 
 module "subnet_default" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/subnet"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
   name                                           = "snet-${var.prefix}-${var.postfix}-default"
   rg_name                                        = module.resource_group.name
@@ -24,7 +24,7 @@ module "subnet_default" {
 }
 
 module "subnet_bastion" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/subnet"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
   name             = "AzureBastionSubnet"
   rg_name          = module.resource_group.name
@@ -33,7 +33,7 @@ module "subnet_bastion" {
 }
 
 module "subnet_compute" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/subnet"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
   name                                           = "snet-${var.prefix}-${var.postfix}-compute"
   rg_name                                        = module.resource_group.name
@@ -45,7 +45,7 @@ module "subnet_compute" {
 # Network security groups
 
 module "network_security_group_training" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/network-security-group"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/network-security-group"
 
   basename = local.basename
   rg_name  = module.resource_group.name
@@ -57,7 +57,7 @@ module "network_security_group_training" {
 # Network security rules
 
 module "network_security_rule_training_batchnodemanagement" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/network-security-rule"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/network-security-rule"
 
   name                       = "BatchNodeManagement"
   priority                   = 100
@@ -74,7 +74,7 @@ module "network_security_rule_training_batchnodemanagement" {
 }
 
 module "network_security_rule_training_azuremachinelearning" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/network-security-rule"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/network-security-rule"
 
   name                       = "AzureMachineLearning"
   priority                   = 110
@@ -93,7 +93,7 @@ module "network_security_rule_training_azuremachinelearning" {
 # NSG associations
 
 module "subnet_network_security_group_association_training" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/subnet-network-security-group-association"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet-network-security-group-association"
 
   subnet_id                 = module.subnet_compute.id
   network_security_group_id = module.network_security_group_training.id
@@ -102,7 +102,7 @@ module "subnet_network_security_group_association_training" {
 # User Defined Routes
 
 module "route_table_training" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/route-table"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/route-table"
 
   basename = local.basename
   location = module.resource_group.location
@@ -110,7 +110,7 @@ module "route_table_training" {
 }
 
 module "route_training_internet" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/route"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/route"
 
   name             = "Internet"
   rg_name          = module.resource_group.name
@@ -120,7 +120,7 @@ module "route_training_internet" {
 }
 
 module "route_training_azureml" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/route"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/route"
 
   name             = "AzureMLRoute"
   rg_name          = module.resource_group.name
@@ -130,7 +130,7 @@ module "route_training_azureml" {
 }
 
 module "route_training_batch" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/route"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/route"
 
   name             = "BatchRoute"
   rg_name          = module.resource_group.name
@@ -142,7 +142,7 @@ module "route_training_batch" {
 # UDR associations
 
 module "subnet_route_table_association_training" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/subnet-route-table-association"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet-route-table-association"
 
   subnet_id      = module.subnet_compute.id
   route_table_id = module.route_table_training.id

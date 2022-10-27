@@ -1,7 +1,7 @@
 # Container registry
 
 module "container_registry" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/container-registry"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/container-registry"
 
   basename      = local.basename
   rg_name       = module.resource_group.name

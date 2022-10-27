@@ -1,7 +1,7 @@
 # Appplication insights
 
 module "application_insights" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/application-insights"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/application-insights"
 
   basename         = local.basename
   rg_name          = module.resource_group.name

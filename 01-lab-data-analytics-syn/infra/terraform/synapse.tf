@@ -1,7 +1,7 @@
 # # Synapse workspace
 
 module "synapse_workspace" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/synapse/synapse-workspace"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/synapse/synapse-workspace"
 
   basename             = local.basename
   rg_name              = module.resource_group.name
@@ -33,7 +33,7 @@ module "synapse_workspace" {
 # Synapse Private Link Hub
 
 module "synapse_private_link_hub" {
-  source = "github.com/microsoft/azure-labs-modules/terraform/synapse/synapse-private-link-hub"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/synapse/synapse-private-link-hub"
 
   basename = local.basename
   rg_name  = module.resource_group.name
@@ -50,7 +50,7 @@ module "synapse_private_link_hub" {
 # Synapse Spark pool
 
 module "synapse_spark_pool" {
-  source = "github.com/microsoft/azure-labs-modules.git//terraform/synapse/synapse-spark-pool"
+  source = "github.com/Azure/azure-data-labs-modules.git//terraform/synapse/synapse-spark-pool"
 
   basename             = local.basename
   synapse_workspace_id = module.synapse_workspace.id
@@ -61,7 +61,7 @@ module "synapse_spark_pool" {
 # Synapse SQL pool
 
 module "synapse_sql_pool" {
-  source = "github.com/microsoft/azure-labs-modules.git//terraform/synapse/synapse-sql-pool"
+  source = "github.com/Azure/azure-data-labs-modules.git//terraform/synapse/synapse-sql-pool"
 
   basename             = local.basename
   synapse_workspace_id = module.synapse_workspace.id

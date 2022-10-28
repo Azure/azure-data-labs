@@ -8,7 +8,7 @@ module "bastion" {
   location  = module.resource_group.location
   subnet_id = module.subnet_bastion.id
 
-  module_enabled = var.is_jumphost_required ? 1 : 0
+  module_enabled = var.is_jumphost_required
 
   tags = local.tags
 }
@@ -25,7 +25,7 @@ module "virtual_machine_jumphost" {
   jumphost_username = var.jumphost_username
   jumphost_password = var.jumphost_password
 
-  module_enabled = var.is_jumphost_required ? 1 : 0
+  module_enabled = var.is_jumphost_required
 
   tags = local.tags
 }

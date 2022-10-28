@@ -3,9 +3,9 @@
 module "private_dns_zones" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/private-dns-zone"
 
-  rg_name = module.resource_group_global_dns.name
+  rg_name = module.resource_group_global_dns[0].name
 
-  vnet_id   = module.virtual_network.id
+  vnet_id   = module.virtual_network[0].id
   dns_zones = local.dns_zones
 
   count = var.is_sec_enabled ? 1 : 0

@@ -15,7 +15,5 @@ module "resource_group_global_dns" {
   basename = "${local.basename}-global-dns"
   location = var.location
 
-  is_sec_module = var.is_sec_enabled
-
   tags = local.tags
 }

@@ -7,7 +7,7 @@ module "data_factory" {
   rg_name  = module.resource_group.name
   location = module.resource_group.location
 
-  subnet_id                   = module.subnet_default.id
+  subnet_id                   = module.subnet_default[0].id
   private_dns_zone_ids_df     = [module.private_dns_zones.list["privatelink.datafactory.azure.net"].id]
   private_dns_zone_ids_portal = [module.private_dns_zones.list["privatelink.adf.azure.com"].id]
 

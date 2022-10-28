@@ -12,7 +12,7 @@ module "synapse_workspace" {
   key_vault_id         = module.key_vault.id
   key_vault_name       = module.key_vault.name
 
-  subnet_id                = module.subnet_default.id
+  subnet_id                = module.subnet_default[0].id
   private_dns_zone_ids_sql = [module.private_dns_zones.list["privatelink.sql.azuresynapse.net"].id]
   private_dns_zone_ids_dev = [module.private_dns_zones.list["privatelink.dev.azuresynapse.net"].id]
 

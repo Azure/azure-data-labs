@@ -9,7 +9,7 @@ module "key_vault" {
   sku_name                 = "premium"
   purge_protection_enabled = false
 
-  subnet_id            = module.subnet_default.id
+  subnet_id            = module.subnet_default[0].id
   private_dns_zone_ids = [module.private_dns_zones.list["privatelink.vaultcore.azure.net"].id]
 
   firewall_default_action = "Deny"

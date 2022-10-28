@@ -8,7 +8,7 @@ module "storage_account_syn" {
   location     = module.resource_group.location
   account_tier = "Standard"
 
-  subnet_id                 = module.subnet_default.id
+  subnet_id                 = module.subnet_default[0].id
   private_dns_zone_ids_blob = [module.private_dns_zones.list["privatelink.blob.core.windows.net"].id]
   private_dns_zone_ids_file = [module.private_dns_zones.list["privatelink.file.core.windows.net"].id]
 

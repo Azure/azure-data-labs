@@ -5,7 +5,7 @@ variables:
 
   # Global
   prefix: "adl-01"
-  postfix: "103"
+  postfix: "10n"
   location: "northeurope"
   
   terraform_st_resource_group: rg-adl-terraform-state

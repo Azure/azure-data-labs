@@ -19,6 +19,12 @@ variable "is_sec_enabled" {
   default     = false
 }
 
+variable "is_jumphost_required" {
+  type        = bool
+  description = "Is jumphost required?"
+  default     = false
+}
+
 variable "aad_login" {
   description = "AAD login"
   type = object({

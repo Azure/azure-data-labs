@@ -8,5 +8,7 @@ module "private_dns_zones" {
   vnet_id   = module.virtual_network.id
   dns_zones = local.dns_zones
 
+  count = var.is_sec_enabled ? 1 : 0
+
   tags = local.tags
 }

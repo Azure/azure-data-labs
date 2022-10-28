@@ -40,8 +40,8 @@ module "synapse_private_link_hub" {
   rg_name  = module.resource_group.name
   location = var.location
 
-  subnet_id            =  var.is_sec_enabled ? module.subnet_default[0].id : null
-  private_dns_zone_ids =  var.is_sec_enabled ? [module.private_dns_zones[0].list["privatelink.azuresynapse.net"].id] : null
+  subnet_id            = var.is_sec_enabled ? module.subnet_default[0].id : null
+  private_dns_zone_ids = var.is_sec_enabled ? [module.private_dns_zones[0].list["privatelink.azuresynapse.net"].id] : null
 
   module_enabled = var.is_sec_enabled
 

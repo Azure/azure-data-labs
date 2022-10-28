@@ -6,7 +6,7 @@ module "event_hubs_namespace" {
   location = module.resource_group.location
 
   subnet_id            = module.subnet_default[0].id
-  private_dns_zone_ids = [module.private_dns_zones.list["privatelink.servicebus.windows.net"].id]
+  private_dns_zone_ids = [module.private_dns_zones.list["privatelink.servicebus.windows.net"][0].id]
 
   module_enabled = false
   is_sec_module  = var.is_sec_enabled

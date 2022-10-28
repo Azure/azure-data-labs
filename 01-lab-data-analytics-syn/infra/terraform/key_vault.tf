@@ -10,7 +10,7 @@ module "key_vault" {
   purge_protection_enabled = false
 
   subnet_id            = module.subnet_default[0].id
-  private_dns_zone_ids = [module.private_dns_zones.list["privatelink.vaultcore.azure.net"].id]
+  private_dns_zone_ids = [module.private_dns_zones.list["privatelink.vaultcore.azure.net"][0].id]
 
   firewall_default_action = "Deny"
   firewall_bypass         = "AzureServices"

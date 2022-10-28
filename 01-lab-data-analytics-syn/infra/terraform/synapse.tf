@@ -26,7 +26,7 @@ module "synapse_workspace" {
   }
 
   module_enabled = true
-  is_sec_module  = var.enable_sec
+  is_sec_module  = var.is_sec_enabled
 
   tags = local.tags
 }
@@ -44,7 +44,7 @@ module "synapse_private_link_hub" {
   private_dns_zone_ids = [module.private_dns_zones.list["privatelink.azuresynapse.net"].id]
 
   module_enabled = true
-  is_sec_module  = var.enable_sec
+  is_sec_module  = var.is_sec_enabled
 
   tags = local.tags
 }

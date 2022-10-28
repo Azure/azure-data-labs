@@ -15,7 +15,7 @@ module "container_registry" {
   firewall_default_action       = "Deny"
   public_network_access_enabled = false
 
-  is_sec_module = var.enable_sec
+  is_sec_module = var.is_sec_enabled
 
   tags = local.tags
 }

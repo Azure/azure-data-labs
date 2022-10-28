@@ -9,7 +9,7 @@ module "event_hubs_namespace" {
   private_dns_zone_ids = [module.private_dns_zones.list["privatelink.servicebus.windows.net"].id]
 
   module_enabled = false
-  is_sec_module  = var.enable_sec
+  is_sec_module  = var.is_sec_enabled
 
   tags = local.tags
 }

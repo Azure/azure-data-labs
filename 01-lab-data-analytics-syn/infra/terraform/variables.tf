@@ -13,7 +13,7 @@ variable "postfix" {
   description = "Postfix for module names"
 }
 
-variable "is_sec_module" {
+variable "is_sec_enabled" {
   type        = bool
   description = "Is secure enabled?"
   default     = false

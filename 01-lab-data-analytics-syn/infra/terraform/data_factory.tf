@@ -12,7 +12,7 @@ module "data_factory" {
   private_dns_zone_ids_portal = [module.private_dns_zones.list["privatelink.adf.azure.com"].id]
 
   module_enabled = var.enable_data_factory
-  is_sec_module  = var.enable_sec
+  is_sec_module  = var.is_sec_enabled
 
   tags = local.tags
 }

@@ -18,7 +18,7 @@ module "storage_account_syn" {
   firewall_bypass         = ["AzureServices"]
 
   module_enabled = true
-  is_sec_module  = var.enable_sec
+  is_sec_module  = var.is_sec_enabled
 
   tags = local.tags
 }

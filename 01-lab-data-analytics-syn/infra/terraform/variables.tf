@@ -13,6 +13,12 @@ variable "postfix" {
   description = "Postfix for module names"
 }
 
+variable "is_sec_module" {
+  type        = bool
+  description = "Is secure enabled?"
+  default     = false
+}
+
 variable "aad_login" {
   description = "AAD login"
   type = object({

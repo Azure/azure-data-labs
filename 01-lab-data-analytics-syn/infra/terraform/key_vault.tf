@@ -15,5 +15,7 @@ module "key_vault" {
   firewall_default_action = "Deny"
   firewall_bypass         = "AzureServices"
 
+  is_sec_module = var.enable_sec
+
   tags = local.tags
 }

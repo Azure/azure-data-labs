@@ -20,6 +20,8 @@ module "machine_learning_workspace" {
   public_network_access_enabled = false
   image_build_compute_name      = "image-builder"
 
+  is_sec_module = var.enable_sec
+
   tags = local.tags
 }
 

@@ -1,16 +1,15 @@
-# module "event_hubs_namespace" {
-#   source = "github.com/Azure/azure-data-labs-modules/terraform/event-hubs/event-hubs-namespace"
+module "event_hubs_namespace" {
+  source = "github.com/Azure/azure-data-labs-modules/terraform/event-hubs/event-hubs-namespace"
 
-#   rg_name  = module.resource_group.name
-#   location = module.resource_group.location
+  basename = local.basename
+  rg_name  = module.resource_group.name
+  location = module.resource_group.location
 
-#   prefix  = var.prefix
-#   postfix = var.postfix
+  subnet_id            = module.subnet_default.id
+  private_dns_zone_ids = [module.private_dns_zones.list["privatelink.servicebus.windows.net"].id]
 
-#   subnet_id            = module.subnet_default.id
-#   private_dns_zone_ids = [module.private_dns_zones.list["privatelink.servicebus.windows.net"].id]
+  module_enabled = false
+  is_sec_module  = var.enable_sec
 
-#   module_enabled = false
-
-#   tags = local.tags
-# }
+  tags = local.tags
+}

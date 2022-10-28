@@ -18,6 +18,7 @@ module "storage_account_mlw" {
   firewall_bypass         = ["AzureServices"]
 
   module_enabled = true
+  is_sec_module  = var.enable_sec
 
   tags = local.tags
 }

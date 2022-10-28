@@ -7,6 +7,9 @@ location = "North Europe"
 # Postfix
 postfix = "101"
 
+# Securite (private endpoints) enabled 
+is_sec_enabled = false
+
 # Jumpbox login credentials
 jumphost_username = "azureuser"
 jumphost_password = "ThisIsNotVerySecure!"

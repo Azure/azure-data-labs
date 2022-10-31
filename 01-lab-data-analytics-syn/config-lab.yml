@@ -14,10 +14,10 @@ variables:
   # Feature flags
   enable_private_endpoints: "false"
   enable_jumphost: "false"
-  enable_analysis_services_server: "false"
-  enable_data_factory: "false"
-  enable_synapse_sql_pool: "false"
-  enable_synapse_spark_pool: "false"
+  enable_analysis_services_server: "true"
+  enable_data_factory: "true"
+  enable_synapse_sql_pool: "true"
+  enable_synapse_spark_pool: "true"
 
   # Internals - do not touch
   az_cli_version: 2.36.0

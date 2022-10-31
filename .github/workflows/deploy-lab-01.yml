@@ -99,7 +99,7 @@ jobs:
             -var "enable_synapse_sql_pool=${{ env.enable_synapse_sql_pool }}" \
             -var "enable_data_factory=${{ env.enable_data_factory }}" \
             -var "enable_analysis_services_server=${{ env.enable_analysis_services_server }}" \
-            -var "aad_login={\"name\"=\"${{ env.USER_EMAIL }}\", \"object_id\"=\"${{ env.USER_OBJECT_ID }}\", \"tenant_id\"=\"${{ env.USER_TENANT_ID }}\"}"
+            -var "aad_login={\"name\"=\"${{ env.USER_EMAIL }}\", \"object_id\"=\"${{ env.USER_OBJECT_ID }}\", \"tenant_id\"=\"${{ env.USER_TENANT_ID }}\"}" \
         working-directory: ${{ env.terraform_workingdir }} 
         shell: bash
 
@@ -114,6 +114,6 @@ jobs:
             -var "enable_synapse_sql_pool=${{ env.enable_synapse_sql_pool }}" \
             -var "enable_data_factory=${{ env.enable_data_factory }}" \
             -var "enable_analysis_services_server=${{ env.enable_analysis_services_server }}" \
-            -var "aad_login={\"name\"=\"${{ env.USER_EMAIL }}\", \"object_id\"=\"${{ env.USER_OBJECT_ID }}\", \"tenant_id\"=\"${{ env.USER_TENANT_ID }}\"}"
+            -var "aad_login={\"name\"=\"${{ env.USER_EMAIL }}\", \"object_id\"=\"${{ env.USER_OBJECT_ID }}\", \"tenant_id\"=\"${{ env.USER_TENANT_ID }}\"}" \
         working-directory: ${{ env.terraform_workingdir }} 
         shell: bash

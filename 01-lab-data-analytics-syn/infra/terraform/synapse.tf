@@ -12,9 +12,9 @@ module "synapse_workspace" {
   key_vault_id         = module.key_vault.id
   key_vault_name       = module.key_vault.name
 
-  subnet_id                = var.is_sec_enabled ? module.subnet_default[0].id : null
-  private_dns_zone_ids_sql = var.is_sec_enabled ? [module.private_dns_zones[0].list["privatelink.sql.azuresynapse.net"].id] : null
-  private_dns_zone_ids_dev = var.is_sec_enabled ? [module.private_dns_zones[0].list["privatelink.dev.azuresynapse.net"].id] : null
+  subnet_id                = var.enable_private_endpoints ? module.subnet_default[0].id : null
+  private_dns_zone_ids_sql = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.sql.azuresynapse.net"].id] : null
+  private_dns_zone_ids_dev = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.dev.azuresynapse.net"].id] : null
 
   synadmin_username = var.synadmin_username
   synadmin_password = var.synadmin_password
@@ -26,7 +26,7 @@ module "synapse_workspace" {
   }
 
   module_enabled = true
-  is_sec_module  = var.is_sec_enabled
+  is_sec_module  = var.enable_private_endpoints
 
   tags = local.tags
 }
@@ -40,10 +40,10 @@ module "synapse_private_link_hub" {
   rg_name  = module.resource_group.name
   location = var.location
 
-  subnet_id            = var.is_sec_enabled ? module.subnet_default[0].id : null
-  private_dns_zone_ids = var.is_sec_enabled ? [module.private_dns_zones[0].list["privatelink.azuresynapse.net"].id] : null
+  subnet_id            = var.enable_private_endpoints ? module.subnet_default[0].id : null
+  private_dns_zone_ids = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.azuresynapse.net"].id] : null
 
-  module_enabled = var.is_sec_enabled
+  module_enabled = var.enable_private_endpoints
 
   tags = local.tags
 }

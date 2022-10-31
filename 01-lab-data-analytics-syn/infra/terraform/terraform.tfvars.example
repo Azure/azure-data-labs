@@ -7,9 +7,6 @@ location = "North Europe"
 # Postfix
 postfix = "101"
 
-# Securite (private endpoints) enabled 
-is_sec_enabled = false
-
 # Jumpbox login credentials
 jumphost_username = "azureuser"
 jumphost_password = "ThisIsNotVerySecure!"
@@ -26,6 +23,8 @@ aad_login = {
 }
 
 # Feature flags
+enable_private_endpoints        = "false"
+enable_jumphost                 = "false" 
 enable_synapse_sql_pool         = "false"
 enable_synapse_spark_pool       = "false"
 enable_data_factory             = "false"

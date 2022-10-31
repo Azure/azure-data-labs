@@ -6,9 +6,9 @@ module "bastion" {
   basename  = local.basename
   rg_name   = module.resource_group.name
   location  = module.resource_group.location
-  subnet_id = var.is_sec_enabled ? module.subnet_bastion[0].id : null
+  subnet_id = var.enable_private_endpoints ? module.subnet_bastion[0].id : null
 
-  module_enabled = var.is_jumphost_required
+  module_enabled = var.enable_jumphost
 
   tags = local.tags
 }
@@ -21,11 +21,11 @@ module "virtual_machine_jumphost" {
   basename          = local.basename
   rg_name           = module.resource_group.name
   location          = module.resource_group.location
-  subnet_id         = var.is_sec_enabled ? module.subnet_default[0].id : null
+  subnet_id         = var.enable_private_endpoints ? module.subnet_default[0].id : null
   jumphost_username = var.jumphost_username
   jumphost_password = var.jumphost_password
 
-  module_enabled = var.is_jumphost_required
+  module_enabled = var.enable_jumphost
 
   tags = local.tags
 }

@@ -7,11 +7,13 @@ variables:
   prefix: "adl-01"
   postfix: "10n"
   location: "northeurope"
-  
+
   terraform_st_resource_group: rg-adl-terraform-state
   terraform_st_storage_account: stadlterraformstate
 
   # Feature flags
+  enable_private_endpoints: "false"
+  enable_jumphost: "false"
   enable_analysis_services_server: "false"
   enable_data_factory: "false"
   enable_synapse_sql_pool: "false"

@@ -49,7 +49,7 @@ Update this file in a seperate branch and then merge it via Pull Request to `mai
 
 Now, you can navigate to the Actions tab of the main page of the repository, where you will see a list of workflows. Select the lab you want to deploy and click **Run workflow**. Congratulations! You have successfully executed all steps to deploy a lab into your environment through GitHub Actions.
 
-Click on it to see how it deploys the environment. If you run into any [issues](https://github.com/microsoft/azure-labs-data/issues), please check the [Known Issues](https://github.com/microsoft/azure-labs-data/blob/main/assets/docs/adl-knownissues.md) first and open an issue if you come accross a potential bug in the repository.
+Click on it to see how it deploys the environment. If you run into any [issues](https://github.com/microsoft/azure-labs-data/issues), please check the [Known Issues](https://github.com/microsoft/azure-labs-data/blob/main/.assets/docs/adl-knownissues.md) first and open an issue if you come accross a potential bug in the repository.
 
 >[< Previous](./adl-serviceprincipal.md) &nbsp;&nbsp; | &nbsp;&nbsp; 
 >[Next >](./adl-knownissues.md)

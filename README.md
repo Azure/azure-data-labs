@@ -23,11 +23,11 @@ Each blueprint provides the following features:
 
 To deploy a lab in your Azure subscription using one of the existing blueprints, please follow the step-by-step instructions:
 
-1. [Prerequisites](./assets/docs/adl-prerequisited.md)
-2. [Create repository](./assets/docs/adl-createrepository.md)
-3. [Setting up Service Principal](./assets/docs/adl-serviceprincipal.md)
-4. [Github Actions Deployment](./assets/docs/adl-deployment-githubactions.md)
-5. [FAQ & Known Isssues](./assets/docs/adl-knownissues.md)
+1. [Prerequisites](./.assets/docs/adl-prerequisited.md)
+2. [Create repository](./.assets/docs/adl-createrepository.md)
+3. [Setting up Service Principal](./.assets/docs/adl-serviceprincipal.md)
+4. [Github Actions Deployment](./.assets/docs/adl-deployment-githubactions.md)
+5. [FAQ & Known Isssues](./.assets/docs/adl-knownissues.md)
 
 ## Create a New Blueprint
 

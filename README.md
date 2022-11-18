@@ -14,10 +14,11 @@ Each blueprint provides the following features:
 
 | Name | Status |
 | - | - |
-| [Data Analytics with Azure Synapse](https://github.com/Azure/azure-data-labs-blueprints/tree/main/01-lab-data-analytics-syn) | [![Blueprint:01-lab-data-analytics](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-lab-01.yml/badge.svg)](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-lab-01.yml) |
-| [Data Science with Azure Machine Learning](https://github.com/Azure/azure-data-labs-blueprints/tree/main/02-lab-data-science-aml) |[![Blueprint:02-lab-data-science-aml](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-lab-02.yml/badge.svg?branch=main)](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-lab-02.yml) |
-| [Data Analytics with HDInsight (Spark)] |TBC |
-| [Data Analytics with Azure Databricks] |TBC |
+| [Data Analytics with Azure Synapse](https://github.com/Azure/azure-data-labs-blueprints/tree/main/01-lab-data-analytics-synapse) | [![Blueprint:01-lab-data-analytics-synapse](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-01-lab-data-analytics-synapse.yml/badge.svg)](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-01-lab-data-analytics-synapse.yml) |
+| [Data Science with Azure Machine Learning](https://github.com/Azure/azure-data-labs-blueprints/tree/main/02-lab-data-science-azureml) | [![Blueprint:02-lab-data-science-azureml](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-02-lab-data-science-azureml.yml/badge.svg)](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-02-lab-data-science-azureml.yml) |
+| [Data Analytics with Azure Databricks](https://github.com/Azure/azure-data-labs-blueprints/tree/main/03-lab-data-analytics-databricks) |TBC |
+| [Data Analytics with HDInsight (Spark)](https://github.com/Azure/azure-data-labs-blueprints/tree/main/04-lab-data-analytics-hdinsight-spark) |TBC |
+
 
 ## Deploy a Lab
 

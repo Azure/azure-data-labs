@@ -1,28 +1,28 @@
-# Azure Data Labs - Blueprints
+# Azure Data Labs - Templates
 
-Welcome to Azure Data Labs blueprints solution accelerator repository! This project is intended to serve as starting point for deploying different data, analytics & AI labs in Azure.
+Welcome to Azure Data Labs templates solution accelerator repository! This project is intended to serve as starting point for deploying different data, analytics & AI labs in Azure.
 
 > This repo uses [Azure Data Labs modules repository](https://github.com/Azure/azure-data-labs-modules) within the /infra folder of each lab
 
-Each blueprint provides the following features:
+Each template provides the following features:
 
 - `infra` folder: includes IaC to deploy the required Azure resources of a lab
 - `samples` folder:  [TBD] - samples to start with on a lab
 - `config-lab.yml` file:  lab config file
 
-## Available Blueprints
+## Available Templates
 
 | Name | Status |
 | - | - |
-| [Data Analytics with Azure Synapse](https://github.com/Azure/azure-data-labs-blueprints/tree/main/01-lab-data-analytics-synapse) | [![Blueprint:01-lab-data-analytics-synapse](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-01-lab-data-analytics-synapse.yml/badge.svg)](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-01-lab-data-analytics-synapse.yml) |
-| [Data Science with Azure Machine Learning](https://github.com/Azure/azure-data-labs-blueprints/tree/main/02-lab-data-science-azureml) | [![Blueprint:02-lab-data-science-azureml](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-02-lab-data-science-azureml.yml/badge.svg)](https://github.com/Azure/azure-data-labs-blueprints/actions/workflows/deploy-02-lab-data-science-azureml.yml) |
-| [Data Analytics with Azure Databricks](https://github.com/Azure/azure-data-labs-blueprints/tree/main/03-lab-data-analytics-databricks) |TBC |
-| [Data Analytics with HDInsight (Spark)](https://github.com/Azure/azure-data-labs-blueprints/tree/main/04-lab-data-analytics-hdinsight-spark) |TBC |
+| [Data Analytics with Azure Synapse](https://github.com/Azure/azure-data-labs-templates/tree/main/01-lab-data-analytics-synapse) | [![Blueprint:01-lab-data-analytics-synapse](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-01-lab-data-analytics-synapse.yml/badge.svg)](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-01-lab-data-analytics-synapse.yml) |
+| [Data Science with Azure Machine Learning](https://github.com/Azure/azure-data-labs-templates/tree/main/02-lab-data-science-azureml) | [![Blueprint:02-lab-data-science-azureml](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-02-lab-data-science-azureml.yml/badge.svg)](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-02-lab-data-science-azureml.yml) |
+| [Data Analytics with Azure Databricks](https://github.com/Azure/azure-data-labs-templates/tree/main/03-lab-data-analytics-databricks) |TBC |
+| [Data Analytics with HDInsight (Spark)](https://github.com/Azure/azure-data-labs-templates/tree/main/04-lab-data-analytics-hdinsight-spark) |TBC |
 
 
 ## Deploy a Lab
 
-To deploy a lab in your Azure subscription using one of the existing blueprints, please follow the step-by-step instructions:
+To deploy a lab in your Azure subscription using one of the existing templates, please follow the step-by-step instructions:
 
 1. [Prerequisites](./.assets/docs/adl-prerequisited.md)
 2. [Create repository](./.assets/docs/adl-createrepository.md)
@@ -30,7 +30,7 @@ To deploy a lab in your Azure subscription using one of the existing blueprints,
 4. [Github Actions Deployment](./.assets/docs/adl-deployment-githubactions.md)
 5. [FAQ & Known Isssues](./.assets/docs/adl-knownissues.md)
 
-## Create a New Blueprint
+## Create a New Template
 
 TBC
 

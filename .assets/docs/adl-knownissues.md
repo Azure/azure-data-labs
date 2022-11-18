@@ -4,15 +4,15 @@
 
 ### How I can spin up multiple lab environments using the same template?
 
-You can just change the `prefix` and/or `postfix` values from config-lab.yml in each blueprint and trigger a new deployment.
+You can just change the `prefix` and/or `postfix` values from config-lab.yml in each template and trigger a new deployment.
 
 ### Is there a way to manage deployments from Azure?
 
-Not yet. We´re working with Azure DevTest Labs and other engineering group to make az-labs-data blueprints [Azure Deployment Environments](https://techcommunity.microsoft.com/t5/azure-developer-community-blog/introducing-azure-deployment-environments/ba-p/3412095) compatible, so you can manage blueprints and deployments from Azure UI.
+Not yet. We´re working with Azure DevTest Labs and other engineering group to make az-labs-data templates [Azure Deployment Environments](https://techcommunity.microsoft.com/t5/azure-developer-community-blog/introducing-azure-deployment-environments/ba-p/3412095) compatible, so you can manage templates and deployments from Azure UI.
 
-### How can I create a new blueprint?
+### How can I create a new template?
 
-You can use the [Azure Labs Modules](https://github.com/microsoft/azure-labs-modules) to create your own blueprints. 
+You can use the [Azure Labs Modules](https://github.com/microsoft/azure-labs-modules) to create your own templates. 
 
 ## 📕 Known Issues
 

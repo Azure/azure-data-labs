@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-name: "Blueprint:01-lab-data-analytics-synapseapse"
+name: "Blueprint:01-lab-data-analytics-synapse"
 
 on: 
   workflow_dispatch:

@@ -19,7 +19,7 @@ Each blueprint provides the following features:
 | [Data Analytics with HDInsight (Spark)] |TBC |
 | [Data Analytics with Azure Databricks] |TBC |
 
-## Get Started
+## Deploy a Lab
 
 To deploy a lab in your Azure subscription using one of the existing blueprints, please follow the step-by-step instructions:
 
@@ -28,6 +28,10 @@ To deploy a lab in your Azure subscription using one of the existing blueprints,
 3. [Setting up Service Principal](./assets/docs/adl-serviceprincipal.md)
 4. [Github Actions Deployment](./assets/docs/adl-deployment-githubactions.md)
 5. [FAQ & Known Isssues](./assets/docs/adl-knownissues.md)
+
+## Create a New Blueprint
+
+TBC
 
 ## Contributing
 

@@ -4,7 +4,7 @@ locals {
     Project     = "Azure Data Labs"
     Environment = "dev"
     Toolkit     = "Terraform"
-    Blueprint   = "data-science-aml"
+    Template   = "data-science-aml"
     Name        = "${var.prefix}"
   }
 

@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-name: "Blueprint:02-lab-data-science-azureml"
+name: "Template:02-lab-data-science-azureml"
 
 on: 
   workflow_dispatch:

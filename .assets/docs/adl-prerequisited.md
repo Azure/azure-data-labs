@@ -14,7 +14,7 @@ Deployments have been tested in `westus2` and `northeurope`. To see Azure resour
 
 ### Deployment
 
-Now, you have two options to deploy different blueprints:
+Now, you have two options to deploy different templates:
 
 1. GitHub Actions
 2. Deploy using Terraform
@@ -32,6 +32,6 @@ To use the Terraform option, please make sure you have the [Azure CLI](https://d
     $ terraform apply
     ```
 
-Alternatively, click on `Next` to follow the steps required to successfully deploy a blueprint through GitHub Actions.
+Alternatively, click on `Next` to follow the steps required to successfully deploy a template through GitHub Actions.
 
 >[Next >](./adl-createrepository.md)

@@ -29,7 +29,7 @@ If you want to use GitHub Actions for deploying the resources, add the following
 
 ### Update lab parameters (config-lab.yml)
 
-To deploy a lab to the desired Azure subscription, you will need to modify some parameters to the appropiate blueprint in the forked repository. There is only one file that requires updates - `config-lab.yml`, as follows:
+To deploy a lab to the desired Azure subscription, you will need to modify some parameters to the appropiate template in the forked repository. There is only one file that requires updates - `config-lab.yml`, as follows:
 
 | Config param | Description |
 | - | - |

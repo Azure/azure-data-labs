@@ -1,6 +1,6 @@
 # Azure Data labs • data-analytics-syn
 
-This template repository (aka blueprint) contains all templates to deploy a **secure Azure Synapse Analytics environment**. This blueprint offers some optional modules which can be enabled/disabled to support some of architectures below.
+This template repository contains all templates to deploy a **secure Azure Synapse Analytics environment**. This template offers some optional modules which can be enabled/disabled to support some of architectures below.
 
 [TODO > Add architecture diagram]
 

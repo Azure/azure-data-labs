@@ -1,6 +1,6 @@
 # Azure Data Labs • data-science-aml
 
-This template repository (aka blueprint) contains all templates to deploy a secure Azure Machine Learning environment. This blueprint offers some optional modules which can be enabled/disabled to support some of architectures below.
+This template repository contains all templates to deploy a secure Azure Machine Learning environment. This template offers some optional modules which can be enabled/disabled to support some of architectures below.
 
 [TODO > Add architecture diagram]
 
@@ -32,7 +32,7 @@ By navigating through the deployment steps, you will deploy the following resour
 
 ### Related Architectures
 
-This blueprint supports the following architectures.
+This template supports the following architectures.
 
 - 📘 [Secure Azure Machiner Learning Service (AzureML) Environment](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/secure-azure-machine-learning-service-azureml-environment/ba-p/3162297)
 - 📘 [Azure Machiner Learning Architecture](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-machine-learning-solution-architecture)

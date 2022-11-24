@@ -25,5 +25,8 @@ By navigating through the deployment steps, you will deploy the following resour
 
 ### Related Architectures
 
-This template supports the following architectures.
+[TODO > Add supported architectures]
 
+### Samples
+
+[TODO > Add samples]

@@ -45,7 +45,7 @@ module "network_security_group" {
 }
 
 module "subnet_adb_public" {
-  source = "github.com/Azure/azure-data-labs-modules/terraform/azure-data-labs-modules/terraform/subnet"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
   name              = "snet-${var.prefix}-${var.postfix}-adb-public"
   rg_name           = module.resource_group.name
@@ -70,7 +70,7 @@ module "subnet_adb_public_security_group_association" {
 }
 
 module "subnet_adb_private" {
-  source = "github.com/Azure/azure-data-labs-modules/terraform/azure-data-labs-modules/terraform/subnet"
+  source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
   name              = "snet-${var.prefix}-${var.postfix}-adb-private"
   rg_name           = module.resource_group.name

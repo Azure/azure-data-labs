@@ -14,7 +14,7 @@ module "storage_account_adb" {
   private_dns_zone_ids_file = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.file.core.windows.net"].id] : null
 
   hns_enabled             = true
-  firewall_default_action = "Allow"
+  firewall_default_action = "Deny"
   firewall_ip_rules       = [data.http.ip.body]
   firewall_bypass         = ["AzureServices"]
 

@@ -1,9 +1,8 @@
-# # Synapse workspace
+# Databricks workspace
 
 module "databricks_workspace" {
-  #source = "github.com/Azure/azure-data-labs-modules/terraform/databricks/"
-  source = "github.com/Azure/azure-data-labs-modules/terraform/azure-data-labs-modules/terraform/databricks"
-
+  source = "github.com/Azure/azure-data-labs-modules/terraform/databricks/"
+ 
   basename             = local.basename
   rg_name              = module.resource_group.name
   location             = module.resource_group.location

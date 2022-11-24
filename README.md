@@ -32,7 +32,10 @@ To deploy a lab in your Azure subscription using one of the existing templates, 
 
 ## Create a New Template
 
-TBC
+1. [Settting up folder structure for the new template]()
+2. [Compose the IaC using modules]()
+3. [Create GitHub Actions workflow and config-lab.yml]()
+4. [Add samples]()
 
 ## Contributing
 

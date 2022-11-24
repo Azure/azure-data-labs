@@ -12,7 +12,7 @@ Not yet. We´re working with Azure DevTest Labs and other engineering group to m
 
 ### How can I create a new template?
 
-You can use the [Azure Labs Modules](https://github.com/microsoft/azure-labs-modules) to create your own templates. 
+You can use the [Azure Data Labs Modules](https://github.com/Azure/azure-data-labs-modules) to create your own templates, see [Create a New Template](./adl-createanewtemplate.md).
 
 ## 📕 Known Issues
 

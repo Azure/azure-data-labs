@@ -1,0 +1,17 @@
+# Resource name prefix
+prefix = "data-01"
+
+# Deployment location
+location = "North Europe"
+
+# Postfix
+postfix = "101"
+
+# Jumpbox login credentials
+jumphost_username = "azureuser"
+jumphost_password = "ThisIsNotVerySecure!"
+
+# Feature flags
+enable_private_endpoints        = "false"
+enable_jumphost                 = "false"
+enable_data_factory             = "false"

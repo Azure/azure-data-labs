@@ -2,7 +2,7 @@
 
 First, you must generate your own respository based on this template respository. To do so, please follow the steps below:
 
-1. On GitHub, navigate to the [main page of this repository](https://github.com/microsoft/azure-labs-data)
+1. On GitHub, navigate to the [main page of this repository](https://github.com/Azure/azure-data-labs-templates)
 2. Above the file list, click **Use this template**
 3. Use the Owner drop-down menu and select the account you want to own the repository
 4. Type a name for your repository and an optional description

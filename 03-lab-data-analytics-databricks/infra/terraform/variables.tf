@@ -44,3 +44,9 @@ variable "enable_data_factory" {
   description = "Variable to enable or disable the module"
   default     = false
 }
+
+variable "enable_event_hub_namespace" {
+  type        = bool
+  description = "Variable to enable or disable the module"
+  default     = false
+}

@@ -15,6 +15,7 @@ variables:
   enable_private_endpoints: "false"
   enable_jumphost: "false"
   enable_data_factory: "true"
+  enable_event_hub_namespace: "true"
   
   # Internals - do not touch
   az_cli_version: 2.36.0

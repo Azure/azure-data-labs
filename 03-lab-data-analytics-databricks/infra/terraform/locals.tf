@@ -4,7 +4,7 @@ locals {
     Project     = "Azure Data Labs"
     Environment = "dev"
     Toolkit     = "Terraform"
-    Template   = "data-insights-syn"
+    Template    = "data-insights-syn"
     Name        = "${var.prefix}"
   }
 

@@ -16,11 +16,11 @@ module "virtual_network" {
 module "subnet_default" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
-  name                                           = "snet-${var.prefix}-${var.postfix}-default"
-  rg_name                                        = module.resource_group.name
-  vnet_name                                      = var.enable_private_endpoints ? module.virtual_network.name : null
-  address_prefixes                               = ["10.0.1.0/24"]
-  enforce_private_link_endpoint_network_policies = true
+  name                                      = "snet-${var.prefix}-${var.postfix}-default"
+  rg_name                                   = module.resource_group.name
+  vnet_name                                 = var.enable_private_endpoints ? module.virtual_network.name : null
+  address_prefixes                          = ["10.0.1.0/24"]
+  private_endpoint_network_policies_enabled = true
 
   count = var.enable_private_endpoints ? 1 : 0
 }

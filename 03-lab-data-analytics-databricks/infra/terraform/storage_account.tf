@@ -9,9 +9,9 @@ module "storage_account_adb" {
   account_tier = "Standard"
 
   subnet_id                 = var.enable_private_endpoints ? module.subnet_default[0].id : null
-  private_dns_zone_ids_blob = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.blob.core.windows.net"].id] : null
-  private_dns_zone_ids_dfs  = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.dfs.core.windows.net"].id] : null
-  private_dns_zone_ids_file = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.file.core.windows.net"].id] : null
+  private_dns_zone_ids_blob = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.blob.core.windows.net"].id] : []
+  private_dns_zone_ids_dfs  = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.dfs.core.windows.net"].id] : []
+  private_dns_zone_ids_file = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.file.core.windows.net"].id] : []
 
   hns_enabled             = true
   firewall_default_action = "Deny"

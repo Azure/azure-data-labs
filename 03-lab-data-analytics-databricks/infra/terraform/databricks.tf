@@ -18,7 +18,9 @@ module "databricks_workspace" {
 
   is_sec_module            = var.enable_private_endpoints
   maximum_network_security = false
-  public_network_enabled   = var.enable_private_endpoints
+  public_network_enabled   = var.enable_private_endpoints && var.public_network_enabled
+  enable_ip_access_list    = !var.public_network_enabled && var.enable_ip_access_list
+  allow_ip_list            = ["${data.http.ip.body}/32"]
 
   tags = local.tags
 }

@@ -1,4 +1,4 @@
-# Azure Data Labs • data-science-aml
+# Azure Data Labs • data-science-azureml
 
 This template repository contains all templates to deploy a secure Azure Machine Learning environment. This template offers some optional modules which can be enabled/disabled to support some of architectures below.
 

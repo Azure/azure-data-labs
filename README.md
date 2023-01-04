@@ -22,7 +22,7 @@ Each template provides the following features:
 
 ## Deploy a Lab
 
-To deploy a lab in your Azure subscription using one of the provided templates, please follow the step-by-step instructions:
+To deploy a lab in your Azure subscription, please follow the step-by-step instructions:
 
 1. [Prerequisites](./.assets/docs/adl-prerequisited.md)
 2. [Create repository](./.assets/docs/adl-createrepository.md)

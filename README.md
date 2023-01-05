@@ -2,13 +2,13 @@
 
 Welcome to Azure Data Labs templates solution accelerator repository! This project is intended to serve as starting point for deploying different data, analytics & AI labs in Azure.
 
-> This repo uses [Azure Data Labs modules repository](https://github.com/Azure/azure-data-labs-modules) within the /infra folder of each lab
+> Note: This repo uses [Azure Data Labs modules repository](https://github.com/Azure/azure-data-labs-modules) within the /infra folder on each template. Follow the 'Create a New Template' guide below to know more.
 
 Each template provides the following features:
 
 - `infra` folder: includes IaC to deploy the required Azure resources of a lab
-- `samples` folder:  [TBD] - samples to start with on a lab
-- `config-lab.yml` file:  lab config file
+- `samples` folder:  samples to start with on a lab
+- `config-lab.yml` file:  lab deployment config file
 
 ## Available Templates
 
@@ -22,7 +22,7 @@ Each template provides the following features:
 
 ## Deploy a Lab
 
-To deploy a lab in your Azure subscription using one of the existing templates, please follow the step-by-step instructions:
+To deploy a lab in your Azure subscription, please follow the step-by-step instructions:
 
 1. [Prerequisites](./.assets/docs/adl-prerequisited.md)
 2. [Create repository](./.assets/docs/adl-createrepository.md)
@@ -32,7 +32,12 @@ To deploy a lab in your Azure subscription using one of the existing templates, 
 
 ## Create a New Template
 
-TBC
+To create a new template from scratch, please follow the instructions below:
+
+1. [Settting up folder structure for the new template]()
+2. [Compose the IaC using modules]()
+3. [Create GitHub Actions workflow and config-lab.yml]()
+4. [Add samples]()
 
 ## Contributing
 

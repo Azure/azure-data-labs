@@ -8,22 +8,29 @@ This template repository contains all templates to deploy a (secure) **Azure Syn
 
 By navigating through the deployment steps, you will deploy the following resources in an Azure subscription:
 
-- [Storage Account](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/storage-account) with Private Endpoints for `blob` and `dfs`, including Data Lake Storage Gen2
-- [Key Vault](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/key-vault) with Private Endpoint
-- [Virtual Network](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/virtual-network), including two subnets `default` and `AzureBastionSubnet` 
-- [Jumphost](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/virtual-machine) (Windows) with [Bastion](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/bastion-host) for easy access to the VNet
-- [Synapse Workspace](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/synapse/synapse-workspace) with Private Endpoints for dedicated SQL pool, serverless SQL pool and development endpoint
-- [Synapse Private Link Hub](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/synapse/synapse-private-link-hub) with Private Endpoint
-- (optional) [Synapse Spark pool](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/synapse/synapse-spark-pool)
-- (optional) [Synapse SQL pool](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/synapse/synapse-sql-pool)
-- (optional) [Data Factory](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/data-factory)
-- (optional) [Analysis Services Server](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/analysis-services-server)
+| Module | Default? | Comment |
+| - | - | - |
+| [Storage Account](./infra/terraform/storage_account.tf) | Yes | ADLS Gen2. Includes `blob` and `dfs` private endpoints (PEs) if  `enable_private_endpoints`
+| [Key Vault](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/key-vault) | Yes | Includes `vault` PEs if `enable_private_endpoints`
+| [Virtual Network](./infra/terraform/network.tf) | Yes | 10.0.0.0/16 by default
+| [Subnet](./infra/terraform/network.tf) | Yes | Includes two subnets `default` (10.0.1.0/24) and `bastion` (10.0.10.0/27)
+| [Synapse Workspace](./infra/terraform/synapse.tf) | Yes | Includes `sql` and `dev` PEs + Private Link Hub if `enable_private_endpoints`
+| [Synapse Spark Pool](./infra/terraform/synapse.tf) | No | Enable by `enable_synapse_spark_pool`
+| [Synapse SQL Pool](./infra/terraform/synapse.tf) | No | Enable by `enable_synapse_sql_pool`
+| [Data Factory](./infra/terraform/data_factory.tf) | No | Enable by `enable_data_factory`. Includes `df` and `portal` PEs if `enable_private_endpoints`
+| [Data Factory](./infra/terraform/data_factory.tf) | No | Enable by `enable_data_factory`. Includes `df` and `portal` PEs if `enable_private_endpoints`
+| [Analysis Services Server](./infra/terraform/analysis_services_server.tf) | No | Enable by `enable_analysis_services_server`
+| [Jumphost (Windows)](./infra/terraform/jumphost.tf) | No | Includes Bastion, enable by `enable_jumphost`
 
-### Deployment
+### Secure deployment
 
-- Enabling / disabling secure deployment: to enable/disable secure deployment, change `enable_private_endpoints` in config-lab.yml.
-- Enabling / disabling resources: to enable/disable optional modules, change `enable_{optional-module}` flag in config-lab.yml. 
-- Deploying the template: to deploy this template, see Deploy a Lab.
-- Extending the template: to change this template, see Create a New Template.
+[TODO > Add diagram and few bullet points in terms of Network Security]
+
+### Notes
+
+- **Enabling / disabling secure deployment**: to enable/disable secure deployment, change `enable_private_endpoints` in config-lab.yml.
+- **Enabling / disabling resources**: to enable/disable optional modules, change `enable_{optional-module}` flag in config-lab.yml. 
+- **Deploying the template**: to deploy this template, see [Deploy a Lab]().
+- **Extending the template**: to change this template, see [Create a New Template]().
 
 > For more information see [FAQ & Known Issues](../assets/docs/adl-knownissues.md)

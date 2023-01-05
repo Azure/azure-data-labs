@@ -1,4 +1,4 @@
-# data-analytics-synapse template
+# lab-data-analytics-synapse
 
 This template repository contains all templates to deploy a (secure) **Azure Synapse Analytics environment**. This template offers some optional modules which can be enabled/disabled to support some of architectures below.
 

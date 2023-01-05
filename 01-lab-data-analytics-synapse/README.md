@@ -26,7 +26,7 @@ By navigating through the deployment steps, you will deploy the following resour
 
 [TODO > Add diagram and few bullet points in terms of Network Security]
 
-### Notes
+### Deployment
 
 - **Enabling / disabling secure deployment**: to enable/disable secure deployment, change `enable_private_endpoints` in config-lab.yml.
 - **Enabling / disabling resources**: to enable/disable optional modules, change `enable_{optional-module}` flag in config-lab.yml. 
@@ -34,3 +34,7 @@ By navigating through the deployment steps, you will deploy the following resour
 - **Extending the template**: to change this template, see [Create a New Template]().
 
 > For more information see [FAQ & Known Issues](../assets/docs/adl-knownissues.md)
+
+### Related Architectures
+
+### Samples

@@ -8,7 +8,7 @@ Each template provides the following features:
 
 - `infra` folder: includes IaC to deploy the required Azure resources of a lab
 - `samples` folder:  samples to start with on a lab
-- `config-lab.yml` file:  lab config file
+- `config-lab.yml` file:  lab deployment config file
 
 ## Available Templates
 

@@ -11,14 +11,14 @@ By navigating through the deployment steps, you will deploy the following resour
 | Module | Default? | Comment |
 | - | - | - |
 | [Storage Account](./infra/terraform/storage_account.tf) | Yes | ADLS Gen2. Includes `blob` and `dfs` private endpoints (PEs) if  `enable_private_endpoints`
-| [Key Vault](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/key-vault) | Yes | Includes `vault` PEs if `enable_private_endpoints`
+| [Key Vault](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/key-vault) | Yes | Includes `vault` PE if `enable_private_endpoints`
 | [Virtual Network](./infra/terraform/network.tf) | Yes | 10.0.0.0/16 by default
 | [Subnet](./infra/terraform/network.tf) | Yes | Includes two subnets `default` (10.0.1.0/24) and `bastion` (10.0.10.0/27)
 | [Synapse Workspace](./infra/terraform/synapse.tf) | Yes | Includes `sql` and `dev` PEs + Private Link Hub if `enable_private_endpoints`
 | [Synapse Spark Pool](./infra/terraform/synapse.tf) | No | Enable by `enable_synapse_spark_pool`
 | [Synapse SQL Pool](./infra/terraform/synapse.tf) | No | Enable by `enable_synapse_sql_pool`
 | [Data Factory](./infra/terraform/data_factory.tf) | No | Enable by `enable_data_factory`. Includes `df` and `portal` PEs if `enable_private_endpoints`
-| [Data Factory](./infra/terraform/data_factory.tf) | No | Enable by `enable_data_factory`. Includes `df` and `portal` PEs if `enable_private_endpoints`
+| [Event Hub](./infra/terraform/event_hub.tf) | No | Enable by `enable_event_hub`. Includes `namespace` PE if `enable_private_endpoints`
 | [Analysis Services Server](./infra/terraform/analysis_services_server.tf) | No | Enable by `enable_analysis_services_server`
 | [Jumphost (Windows)](./infra/terraform/jumphost.tf) | No | Includes Bastion, enable by `enable_jumphost`
 

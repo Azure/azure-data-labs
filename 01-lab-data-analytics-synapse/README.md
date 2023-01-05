@@ -10,6 +10,7 @@ By navigating through the deployment steps, you will deploy the following resour
 
 | Module | Default? | Comment |
 | - | - | - |
+| [Resource Group](./infra/terraform/resource_group.tf) | Yes | One for deployed resources and additional one for Private DNS Zones
 | [Storage Account](./infra/terraform/storage_account.tf) | Yes | ADLS Gen2. Includes `blob` and `dfs` private endpoints (PEs) if  `enable_private_endpoints`
 | [Key Vault](https://github.com/Azure/azure-data-labs-modules/tree/main/terraform/key-vault) | Yes | Includes `vault` PE if `enable_private_endpoints`
 | [Virtual Network](./infra/terraform/network.tf) | Yes | 10.0.0.0/16 by default

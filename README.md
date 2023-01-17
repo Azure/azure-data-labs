@@ -19,6 +19,9 @@ Each template provides the following features:
 | [Data Analytics with Azure Databricks](https://github.com/Azure/azure-data-labs-templates/tree/main/03-lab-data-analytics-databricks) |TBC |
 | [Data Analytics with HDInsight (Spark + Kafka)](https://github.com/Azure/azure-data-labs-templates/tree/main/04-lab-data-analytics-hdinsight-spark) |TBC |
 
+Other repositories and templates using Azure Data Labs:
+
+- TBC
 
 ## Deploy a Lab
 

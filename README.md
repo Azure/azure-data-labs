@@ -19,10 +19,6 @@ Each template provides the following features:
 | [Data Analytics with Azure Databricks](https://github.com/Azure/azure-data-labs-templates/tree/main/03-lab-data-analytics-databricks) |TBC |
 | [Data Analytics with HDInsight (Spark + Kafka)](https://github.com/Azure/azure-data-labs-templates/tree/main/04-lab-data-analytics-hdinsight-spark) |TBC |
 
-Other repositories and templates using Azure Data Labs:
-
-- TBC
-
 ## Deploy a Lab
 
 To deploy a lab in your Azure subscription, please follow the step-by-step instructions:
@@ -41,6 +37,10 @@ To create a new template from scratch, please follow the instructions below:
 2. [Compose the IaC using modules]()
 3. [Create GitHub Actions workflow and config-lab.yml]()
 4. [Add samples]()
+
+## Repos Using Data Labs
+
+- [Azure/AnalyticsinaBox](https://github.com/Azure/AnalyticsinaBox)
 
 ## Contributing
 

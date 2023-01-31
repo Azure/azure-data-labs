@@ -29,7 +29,7 @@ If you want to use GitHub Actions for deploying the resources, add the following
 
 ### Update lab parameters (config-lab.yml)
 
-To deploy a lab to the desired Azure subscription, you will need to modify some parameters to the appropiate template in the forked repository. There is only one file that requires updates - `config-lab.yml`, as follows:
+To deploy a lab to the desired Azure subscription, you will need to modify some parameters to the appropiate template in the forked repository. Underneath each lab's folder there exists a file named `config-lab.yml` containing those parameters, and they must be changed as follows:
 
 | Config param | Description |
 | - | - |
@@ -40,14 +40,19 @@ To deploy a lab to the desired Azure subscription, you will need to modify some 
 | `terraform_st_storage_account` | storage account name for Terraform state |
 
 > **Note:** Enable / disable different feature flags as needed as well.
+> **Note:** Assigning different values to `prefix` and `postfix` enables you to spin up multiple instances of the same lab environment using the same template.
 
 ### Merge changes to main
 
-Update this file in a seperate branch and then merge it via Pull Request to `main` before triggering a deployment.
+Either update this file and push it directly to `main`, or change it in a separate branch and then merge it via a Pull Request to `main` before triggering a deployment.
 
 ### Deploy a lab
 
-Now, you can navigate to the Actions tab of the main page of the repository, where you will see a list of workflows. Select the lab you want to deploy and click **Run workflow**. Congratulations! You have successfully executed all steps to deploy a lab into your environment through GitHub Actions.
+Now, you can navigate to the Actions tab of the main page of the repository, where you will see a list of workflows. Select the lab you want to deploy and click **Run workflow**.
+
+Congratulations! 👏👏
+
+You have successfully executed all the required steps to deploy a lab into your environment through GitHub Actions.
 
 Click on it to see how it deploys the environment. If you run into any [issues](https://github.com/Azure/azure-data-labs-templates/issues), please check the [Known Issues](https://github.com/Azure/azure-data-labs-templates/blob/main/.assets/docs/adl-knownissues.md) first and open an issue if you come accross a potential bug in the repository.
 

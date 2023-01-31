@@ -1,14 +1,14 @@
-# az-labs-data • FAQ & Known Issues
+# Azure Data Labs • FAQ & Known Issues
 
 ## 📘 FAQ
 
 ### How I can spin up multiple lab environments using the same template?
 
-You can just change the `prefix` and/or `postfix` values from config-lab.yml in each template and trigger a new deployment.
+You can just change the `prefix` and/or `postfix` values in the config-lab.yml for each template and trigger a new deployment.
 
 ### Is there a way to manage deployments from Azure?
 
-Not yet. We´re working with Azure DevTest Labs and other engineering group to make az-labs-data templates [Azure Deployment Environments](https://techcommunity.microsoft.com/t5/azure-developer-community-blog/introducing-azure-deployment-environments/ba-p/3412095) compatible, so you can manage templates and deployments from Azure UI.
+Not yet. We´re working with [Azure DevTest Labs](https://azure.microsoft.com/en-us/products/devtest-lab) and other engineering groups to make Azure Data Labs templates  compatible with [Azure Deployment Environments](https://techcommunity.microsoft.com/t5/azure-developer-community-blog/introducing-azure-deployment-environments/ba-p/3412095), so that you can manage templates and deployments from Azure UI.
 
 ### How can I create a new template?
 

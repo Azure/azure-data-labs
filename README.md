@@ -17,7 +17,6 @@ Each template provides the following features:
 | [Data Analytics with Azure Synapse](https://github.com/Azure/azure-data-labs-templates/tree/main/01-lab-data-analytics-synapse) | [![Template:01-lab-data-analytics-synapse](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-01-lab-data-analytics-synapse.yml/badge.svg)](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-01-lab-data-analytics-synapse.yml) |
 | [Data Science with Azure Machine Learning](https://github.com/Azure/azure-data-labs-templates/tree/main/02-lab-data-science-azureml) | [![Template:02-lab-data-science-azureml](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-02-lab-data-science-azureml.yml/badge.svg)](https://github.com/Azure/azure-data-labs-templates/actions/workflows/deploy-02-lab-data-science-azureml.yml) |
 | [Data Analytics with Azure Databricks](https://github.com/Azure/azure-data-labs-templates/tree/main/03-lab-data-analytics-databricks) |TBC |
-| [Data Analytics with HDInsight (Spark + Kafka)](https://github.com/Azure/azure-data-labs-templates/tree/main/04-lab-data-analytics-hdinsight-spark) |TBC |
 
 ## Deploy a Lab
 
@@ -37,10 +36,6 @@ To create a new template from scratch, please follow the instructions below:
 2. [Compose the IaC using modules]()
 3. [Create GitHub Actions workflow and config-lab.yml]()
 4. [Add samples]()
-
-## Repos Using Data Labs
-
-- [Azure/AnalyticsinaBox](https://github.com/Azure/AnalyticsinaBox)
 
 ## Contributing
 

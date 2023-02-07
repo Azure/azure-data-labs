@@ -38,4 +38,8 @@ By navigating through the deployment steps, you will deploy the following resour
 
 ### Related Architectures
 
-### Samples
+This template supports the following architectures:
+
+- 📘 [Enterprise business intelligence](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/analytics/enterprise-bi-synapse)
+- 📘 [Near real-time lakehouse data processing](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/real-time-lakehouse-data-processing)
+- 📘

@@ -4,7 +4,7 @@ locals {
     Project     = "Azure Data Labs"
     Environment = "dev"
     Toolkit     = "Terraform"
-    Template   = "data-insights-syn"
+    Template    = "data-insights-syn"
     Name        = "${var.prefix}"
   }
 
@@ -13,7 +13,6 @@ locals {
     "privatelink.dev.azuresynapse.net",
     "privatelink.azuresynapse.net",
     "privatelink.blob.core.windows.net",
-    "privatelink.file.core.windows.net",
     "privatelink.dfs.core.windows.net",
     "privatelink.vaultcore.azure.net",
     "privatelink.servicebus.windows.net",

@@ -9,8 +9,6 @@ module "synapse_workspace" {
   adls_id              = module.storage_account_syn.adls_id
   storage_account_id   = module.storage_account_syn.id
   storage_account_name = module.storage_account_syn.name
-  key_vault_id         = module.key_vault.id
-  key_vault_name       = module.key_vault.name
 
   subnet_id                = var.enable_private_endpoints ? module.subnet_default[0].id : null
   private_dns_zone_ids_sql = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.sql.azuresynapse.net"].id] : null

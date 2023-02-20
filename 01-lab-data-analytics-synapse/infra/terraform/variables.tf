@@ -88,3 +88,9 @@ variable "enable_analysis_services_server" {
   description = "Variable to enable or disable the module"
   default     = false
 }
+
+variable "enable_event_hub" {
+  type        = bool
+  description = "Variable to enable or disable the module"
+  default     = false
+}

@@ -20,7 +20,7 @@ module "machine_learning_workspace" {
   public_network_access_enabled = false
   image_build_compute_name      = "image-builder"
 
-  is_sec_module = var.is_sec_enabled
+  is_sec_module = var.enable_private_endpoints
 
   tags = local.tags
 }
@@ -43,7 +43,7 @@ module "machine_learning_synapse_spark" {
 module "machine_learning_compute_cluster_image-builder" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
 
-  name                          = "image-builder"
+  basename                      = "image-builder"
   location                      = module.resource_group.location
   subnet_id                     = module.subnet_compute.id
   machine_learning_workspace_id = module.machine_learning_workspace.id
@@ -54,7 +54,7 @@ module "machine_learning_compute_cluster_image-builder" {
 module "machine_learning_compute_cluster_cpu_cluster" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
 
-  name                          = "cpu-cluster"
+  basename                      = "cpu-cluster"
   location                      = module.resource_group.location
   subnet_id                     = module.subnet_compute.id
   machine_learning_workspace_id = module.machine_learning_workspace.id

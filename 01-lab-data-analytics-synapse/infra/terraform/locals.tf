@@ -24,5 +24,6 @@ locals {
   safe_prefix  = replace(var.prefix, "-", "")
   safe_postfix = replace(var.postfix, "-", "")
 
-  basename = "${var.prefix}-${var.postfix}"
+  basename      = "${var.prefix}-${var.postfix}"
+  safe_basename = "${local.safe_prefix}${local.safe_postfix}"
 }

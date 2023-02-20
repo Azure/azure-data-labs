@@ -18,7 +18,8 @@ variables:
   enable_data_factory: "true"
   enable_synapse_sql_pool: "true"
   enable_synapse_spark_pool: "true"
+  enable_event_hub: "false"
 
   # Internals - do not touch
-  az_cli_version: 2.36.0
+  az_cli_version: 2.45.0
   terraform_st_container_name: default

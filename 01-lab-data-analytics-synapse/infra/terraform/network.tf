@@ -20,11 +20,11 @@ module "subnet_default" {
 
   name                                      = "snet-${var.prefix}-${var.postfix}-default"
   rg_name                                   = module.resource_group.name
-  vnet_name                                 = var.enable_private_endpoints ? module.virtual_network[0].name : null
+  vnet_name                                 = module.virtual_network[0].name
   address_prefixes                          = ["10.0.1.0/24"]
   private_endpoint_network_policies_enabled = true
 
-  count = var.enable_private_endpoints ? 1 : 0
+  count = var.enable_private_endpoints ? 1 : (var.enable_jumphost ? 1 : 0)
 }
 
 module "subnet_bastion" {
@@ -32,7 +32,7 @@ module "subnet_bastion" {
 
   name             = "AzureBastionSubnet"
   rg_name          = module.resource_group.name
-  vnet_name        = var.enable_private_endpoints ? module.virtual_network[0].name : null
+  vnet_name        = module.virtual_network[0].name
   address_prefixes = ["10.0.10.0/27"]
 
   count = var.enable_jumphost ? 1 : 0

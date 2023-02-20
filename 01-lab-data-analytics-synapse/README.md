@@ -31,7 +31,7 @@ By navigating through the deployment steps, you will deploy the following resour
 
 - **Enabling / disabling secure deployment**: to enable/disable secure deployment, change `enable_private_endpoints` in config-lab.yml.
 - **Enabling / disabling resources**: to enable/disable optional modules, change `enable_{optional-module}` flag in config-lab.yml. 
-- **Deploying the template**: to deploy this template, see [Deploy a Lab]().
+- **Deploying the template**: to deploy this template, see [Deploy a Lab](https://github.com/Azure/azure-data-labs/blob/main/.assets/docs/adl-prerequisited.md).
 - **Extending the template**: to change this template, see [Create a New Template]().
 
 > For more information see [FAQ & Known Issues](../assets/docs/adl-knownissues.md)
@@ -42,4 +42,4 @@ This template supports the following architectures:
 
 - 📘 [Enterprise business intelligence](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/analytics/enterprise-bi-synapse)
 - 📘 [Near real-time lakehouse data processing](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/real-time-lakehouse-data-processing)
-- 📘
+- 📘 TBC

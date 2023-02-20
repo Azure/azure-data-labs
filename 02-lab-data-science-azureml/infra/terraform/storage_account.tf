@@ -3,7 +3,7 @@
 module "storage_account_mlw" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/storage-account"
 
-  basename     = "${local.basename}mlw"
+  basename     = "${local.safe_basename}mlw"
   rg_name      = module.resource_group.name
   location     = module.resource_group.location
   account_tier = "Standard"
@@ -18,7 +18,7 @@ module "storage_account_mlw" {
   firewall_bypass         = ["AzureServices"]
 
   module_enabled = true
-  is_sec_module  = var.is_sec_enabled
+  is_sec_module  = var.enable_private_endpoints
 
   tags = local.tags
 }
@@ -26,7 +26,7 @@ module "storage_account_mlw" {
 module "storage_account_syn" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/storage-account"
 
-  basename     = "${local.basename}syn"
+  basename     = "${local.safe_basename}syn"
   rg_name      = module.resource_group.name
   location     = module.resource_group.location
   account_tier = "Standard"

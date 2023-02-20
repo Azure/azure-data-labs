@@ -4,7 +4,7 @@ locals {
     Project     = "Azure Data Labs"
     Environment = "dev"
     Toolkit     = "Terraform"
-    Template   = "data-science-aml"
+    Template    = "data-science-aml"
     Name        = "${var.prefix}"
   }
 
@@ -25,5 +25,6 @@ locals {
   safe_prefix  = replace(var.prefix, "-", "")
   safe_postfix = replace(var.postfix, "-", "")
 
-  basename = "${var.prefix}-${var.postfix}"
+  basename      = "${var.prefix}-${var.postfix}"
+  safe_basename = "${local.safe_prefix}${local.safe_postfix}"
 }

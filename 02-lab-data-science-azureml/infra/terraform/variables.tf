@@ -13,12 +13,6 @@ variable "postfix" {
   description = "Postfix for module names"
 }
 
-variable "is_sec_enabled" {
-  type        = bool
-  description = "Is secure enabled?"
-  default     = false
-}
-
 variable "aad_login" {
   description = "AAD login"
   type = object({
@@ -55,6 +49,14 @@ variable "synadmin_password" {
   type        = string
   description = "The Password associated with the sql_administrator_login for the SQL administrator"
   default     = "ThisIsNotVerySecure!"
+}
+
+# Feature flags
+
+variable "enable_private_endpoints" {
+  type        = bool
+  description = "Is secure enabled?"
+  default     = false
 }
 
 variable "enable_jumphost" {

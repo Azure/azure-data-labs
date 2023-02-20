@@ -12,10 +12,7 @@ module "key_vault" {
   subnet_id            = module.subnet_default.id
   private_dns_zone_ids = [module.private_dns_zones.list["privatelink.vaultcore.azure.net"].id]
 
-  firewall_default_action = "Deny"
-  firewall_bypass         = "AzureServices"
-
-  is_sec_module = var.is_sec_enabled
+  is_sec_module = var.enable_private_endpoints
 
   tags = local.tags
 }

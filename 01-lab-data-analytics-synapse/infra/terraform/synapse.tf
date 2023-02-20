@@ -34,7 +34,7 @@ module "synapse_workspace" {
 module "synapse_private_link_hub" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/synapse/synapse-private-link-hub"
 
-  basename = local.basename
+  basename = local.safe_basename
   rg_name  = module.resource_group.name
   location = var.location
 
@@ -51,7 +51,7 @@ module "synapse_private_link_hub" {
 module "synapse_spark_pool" {
   source = "github.com/Azure/azure-data-labs-modules.git//terraform/synapse/synapse-spark-pool"
 
-  basename             = local.basename
+  basename             = local.safe_basename
   synapse_workspace_id = module.synapse_workspace.id
 
   module_enabled = var.enable_synapse_spark_pool
@@ -62,7 +62,7 @@ module "synapse_spark_pool" {
 module "synapse_sql_pool" {
   source = "github.com/Azure/azure-data-labs-modules.git//terraform/synapse/synapse-sql-pool"
 
-  basename             = local.basename
+  basename             = local.safe_basename
   synapse_workspace_id = module.synapse_workspace.id
 
   module_enabled = var.enable_synapse_sql_pool

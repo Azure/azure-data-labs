@@ -24,8 +24,3 @@ aad_login = {
 
 # Feature flags
 enable_private_endpoints        = "false"
-enable_jumphost                 = "false" 
-enable_synapse_sql_pool         = "false"
-enable_synapse_spark_pool       = "false"
-enable_data_factory             = "false"
-enable_analysis_services_server = "false"

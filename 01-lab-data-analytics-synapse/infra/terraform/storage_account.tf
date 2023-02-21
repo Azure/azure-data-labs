@@ -8,9 +8,9 @@ module "storage_account_syn" {
   location     = module.resource_group.location
   account_tier = "Standard"
 
-  subnet_id                 = var.enable_private_endpoints ? module.subnet_default[0].id : null
-  private_dns_zone_ids_blob = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.blob.core.windows.net"].id] : []
-  private_dns_zone_ids_dfs  = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.dfs.core.windows.net"].id] : []
+  subnet_id                 = local.enable_private_endpoints ? module.subnet_default[0].id : null
+  private_dns_zone_ids_blob = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.blob.core.windows.net"].id] : []
+  private_dns_zone_ids_dfs  = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.dfs.core.windows.net"].id] : []
 
   hns_enabled             = false
   firewall_default_action = "Allow"
@@ -18,7 +18,7 @@ module "storage_account_syn" {
   firewall_bypass         = ["AzureServices"]
 
   module_enabled = true
-  is_sec_module  = var.enable_private_endpoints
+  is_sec_module  = local.enable_private_endpoints
 
   tags = local.tags
 }

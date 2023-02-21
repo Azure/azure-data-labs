@@ -7,7 +7,7 @@ module "analysis_services" {
   rg_name  = module.resource_group.name
   location = module.resource_group.location
 
-  module_enabled = var.enable_analysis_services_server
+  module_enabled = local.enable_analysis_services_server
 
   tags = local.tags
 }

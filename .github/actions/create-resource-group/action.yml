@@ -10,6 +10,6 @@ runs:
     - name: Create Resource Group
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.45.0
+        azcliversion: ${{ env.az_cli_version }}
         inlineScript: |
           az group create --location ${{ env.location }} --name ${{ env.terraform_st_resource_group }}

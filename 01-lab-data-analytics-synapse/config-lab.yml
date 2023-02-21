@@ -22,4 +22,5 @@ variables:
   terraform_st_storage_account: stadlterraformstate
 
   # Internals - do not touch
+  az_cli_version: 2.45.0
   terraform_st_container_name: default

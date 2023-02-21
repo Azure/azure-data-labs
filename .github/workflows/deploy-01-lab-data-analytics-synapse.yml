@@ -35,10 +35,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # - name: Set Environment Variables
-      #   uses: ./.github/actions/set-env-variables
-      #   with:
-      #     variablesPath: ${{ env.variables_path }}
+      - name: Set Environment Variables
+        uses: ./.github/actions/set-env-variables
+        with:
+          variablesPath: ${{ env.variables_path }}
 
       - name: Azure Login
         uses: azure/login@v1
@@ -74,10 +74,10 @@ jobs:
         with:
           terraform_version: 'latest'
 
-      - name: Set Environment Variables
-        uses: ./.github/actions/set-env-variables
-        with:
-          variablesPath: ${{ env.variables_path }}
+      # - name: Set Environment Variables
+      #   uses: ./.github/actions/set-env-variables
+      #   with:
+      #     variablesPath: ${{ env.variables_path }}
 
       - name: Terraform Format
         uses: ./.github/actions/run-terraform-format

@@ -1,4 +1,4 @@
-# Azure Data Labs - Templates
+# Azure Data Labs
 
 Welcome to Azure Data Labs templates solution accelerator repository! This project is intended to serve as starting point for deploying different data, analytics & AI labs in Azure.
 

@@ -9,10 +9,10 @@ module "key_vault" {
   sku_name                 = "premium"
   purge_protection_enabled = false
 
-  subnet_id            = var.enable_private_endpoints ? module.subnet_default[0].id : null
-  private_dns_zone_ids = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.vaultcore.azure.net"].id] : null
+  subnet_id            = local.enable_private_endpoints ? module.subnet_default[0].id : null
+  private_dns_zone_ids = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.vaultcore.azure.net"].id] : null
 
-  is_sec_module = var.enable_private_endpoints
+  is_sec_module = local.enable_private_endpoints
 
   tags = local.tags
 }

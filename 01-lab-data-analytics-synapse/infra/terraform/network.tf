@@ -8,7 +8,7 @@ module "virtual_network" {
   location      = module.resource_group.location
   address_space = ["10.0.0.0/16"]
 
-  count = var.enable_private_endpoints ? 1 : (var.enable_jumphost ? 1 : 0)
+  count = local.enable_private_endpoints ? 1 : (local.enable_jumphost ? 1 : 0)
 
   tags = local.tags
 }
@@ -18,13 +18,13 @@ module "virtual_network" {
 module "subnet_default" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/subnet"
 
-  name                                      = "snet-${var.prefix}-${var.postfix}-default"
+  name                                      = "snet-${local.prefix}-${local.postfix}-default"
   rg_name                                   = module.resource_group.name
   vnet_name                                 = module.virtual_network[0].name
   address_prefixes                          = ["10.0.1.0/24"]
   private_endpoint_network_policies_enabled = true
 
-  count = var.enable_private_endpoints ? 1 : (var.enable_jumphost ? 1 : 0)
+  count = local.enable_private_endpoints ? 1 : (local.enable_jumphost ? 1 : 0)
 }
 
 module "subnet_bastion" {
@@ -35,5 +35,5 @@ module "subnet_bastion" {
   vnet_name        = module.virtual_network[0].name
   address_prefixes = ["10.0.10.0/27"]
 
-  count = var.enable_jumphost ? 1 : 0
+  count = local.enable_jumphost ? 1 : 0
 }

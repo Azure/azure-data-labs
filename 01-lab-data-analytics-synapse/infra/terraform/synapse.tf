@@ -10,9 +10,9 @@ module "synapse_workspace" {
   storage_account_id   = module.storage_account_syn.id
   storage_account_name = module.storage_account_syn.name
 
-  subnet_id                = var.enable_private_endpoints ? module.subnet_default[0].id : null
-  private_dns_zone_ids_sql = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.sql.azuresynapse.net"].id] : null
-  private_dns_zone_ids_dev = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.dev.azuresynapse.net"].id] : null
+  subnet_id                = local.enable_private_endpoints ? module.subnet_default[0].id : null
+  private_dns_zone_ids_sql = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.sql.azuresynapse.net"].id] : null
+  private_dns_zone_ids_dev = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.dev.azuresynapse.net"].id] : null
 
   synadmin_username = var.synadmin_username
   synadmin_password = var.synadmin_password
@@ -24,7 +24,7 @@ module "synapse_workspace" {
   }
 
   module_enabled = true
-  is_sec_module  = var.enable_private_endpoints
+  is_sec_module  = local.enable_private_endpoints
 
   tags = local.tags
 }
@@ -36,12 +36,12 @@ module "synapse_private_link_hub" {
 
   basename = local.safe_basename
   rg_name  = module.resource_group.name
-  location = var.location
+  location = local.location
 
-  subnet_id            = var.enable_private_endpoints ? module.subnet_default[0].id : null
-  private_dns_zone_ids = var.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.azuresynapse.net"].id] : null
+  subnet_id            = local.enable_private_endpoints ? module.subnet_default[0].id : null
+  private_dns_zone_ids = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.azuresynapse.net"].id] : null
 
-  module_enabled = var.enable_private_endpoints
+  module_enabled = local.enable_private_endpoints
 
   tags = local.tags
 }
@@ -54,7 +54,7 @@ module "synapse_spark_pool" {
   basename             = local.safe_basename
   synapse_workspace_id = module.synapse_workspace.id
 
-  module_enabled = var.enable_synapse_spark_pool
+  module_enabled = local.enable_synapse_spark_pool
 }
 
 # Synapse SQL pool
@@ -65,5 +65,5 @@ module "synapse_sql_pool" {
   basename             = local.safe_basename
   synapse_workspace_id = module.synapse_workspace.id
 
-  module_enabled = var.enable_synapse_sql_pool
+  module_enabled = local.enable_synapse_sql_pool
 }

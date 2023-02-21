@@ -10,6 +10,6 @@ runs:
     - name: Create Resource Group
       uses: azure/CLI@v1
       with:
-        azcliversion: ${{ env.az_cli_version }}
+        azcliversion: 2.45.0
         inlineScript: |
           az storage account create -n ${{ env.terraform_st_storage_account }} -g ${{ env.terraform_st_resource_group }} -l ${{ env.location }} --sku Standard_LRS

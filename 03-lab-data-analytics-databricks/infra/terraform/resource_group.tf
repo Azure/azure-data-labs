@@ -1,21 +1,21 @@
 # Resource group
 
 module "resource_group" {
-  source = "github.com/Azure/azure-data-labs-modules/terraform/resource-group"
+  source   = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/resource-group?ref=main"
 
   basename = local.basename
   location = var.location
 
-  tags = local.tags
+  tags     = local.tags
 }
 
 module "resource_group_global_dns" {
-  source = "github.com/Azure/azure-data-labs-modules/terraform/resource-group"
+  source   = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/resource-group?ref=main"
 
   basename = "${local.basename}-global-dns"
   location = var.location
 
-  count = var.enable_private_endpoints ? 1 : 0
+  count    = var.enable_private_endpoints ? 1 : 0
 
-  tags = local.tags
+  tags     = local.tags
 }

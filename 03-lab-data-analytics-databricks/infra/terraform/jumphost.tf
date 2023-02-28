@@ -1,22 +1,22 @@
 # Bastion
 
 module "bastion" {
-  source = "github.com/Azure/azure-data-labs-modules/terraform/bastion-host"
+  source         = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/bastion-host?ref=main"
 
-  basename  = local.basename
-  rg_name   = module.resource_group.name
-  location  = module.resource_group.location
-  subnet_id = var.enable_jumphost ? module.subnet_bastion[0].id : null
+  basename       = local.basename
+  rg_name        = module.resource_group.name
+  location       = module.resource_group.location
+  subnet_id      = var.enable_jumphost ? module.subnet_bastion[0].id : null
 
   module_enabled = var.enable_jumphost
 
-  tags = local.tags
+  tags           = local.tags
 }
 
 # Virtual machine
 
 module "virtual_machine_jumphost" {
-  source = "github.com/Azure/azure-data-labs-modules/terraform/virtual-machine"
+  source            = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/virtual-machine?ref=main"
 
   basename          = local.basename
   rg_name           = module.resource_group.name
@@ -25,7 +25,7 @@ module "virtual_machine_jumphost" {
   jumphost_username = var.jumphost_username
   jumphost_password = var.jumphost_password
 
-  module_enabled = var.enable_jumphost
+  module_enabled    = var.enable_jumphost
 
-  tags = local.tags
+  tags              = local.tags
 }

@@ -5,17 +5,20 @@ variables:
 
   # Global
   prefix: "adl-03"
-  postfix: "10o"
+  postfix: "101"
   location: "northeurope"
 
   terraform_st_resource_group: rg-adl-terraform-state
   terraform_st_storage_account: stadlterraformstate
 
   # Feature flags
-  enable_private_endpoints: "false"
-  enable_jumphost: "false"
+  enable_private_endpoints: "true"
+  public_network_enabled : "true"
+  enable_ip_access_list: "true"
+  enable_jumphost: "true"
   enable_data_factory: "true"
   enable_event_hub_namespace: "true"
+  enable_cosmosdb: "true"
   
   # Internals - do not touch
   az_cli_version: 2.36.0

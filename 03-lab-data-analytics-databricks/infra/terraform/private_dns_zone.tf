@@ -1,7 +1,7 @@
 # Private DNS zones
 
 module "private_dns_zones" {
-  source    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/private-dns-zone?ref=main"
+  source    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/private-dns-zone?ref=v1.4.0"
 
   rg_name   = var.enable_private_endpoints ? module.resource_group_global_dns[0].name : null
 

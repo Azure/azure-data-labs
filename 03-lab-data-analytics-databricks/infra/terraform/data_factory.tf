@@ -1,7 +1,7 @@
 # Data Factory
 
 module "data_factory" {
-  source                      = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/data-factory/data-factory?ref=main"
+  source                      = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/data-factory/data-factory?ref=v1.4.0"
 
   basename                    = local.basename
   rg_name                     = module.resource_group.name

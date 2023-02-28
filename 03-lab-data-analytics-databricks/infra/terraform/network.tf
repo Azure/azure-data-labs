@@ -1,7 +1,7 @@
 # Virtual network
 
 module "virtual_network" {
-  source        = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/virtual-network?ref=main"
+  source        = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/virtual-network?ref=v1.4.0"
 
   basename      = local.basename
   rg_name       = module.resource_group.name
@@ -14,7 +14,7 @@ module "virtual_network" {
 # Subnets
 
 module "subnet_default" {
-  source                                    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=main"
+  source                                    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=v1.4.0"
 
   name                                      = "snet-${var.prefix}-${var.postfix}-default"
   rg_name                                   = module.resource_group.name
@@ -26,7 +26,7 @@ module "subnet_default" {
 }
 
 module "subnet_bastion" {
-  source           = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=main"
+  source           = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=v1.4.0"
 
   name             = "AzureBastionSubnet"
   rg_name          = module.resource_group.name
@@ -37,7 +37,7 @@ module "subnet_bastion" {
 }
 
 module "network_security_group" {
-  source   = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/network-security-group?ref=main"
+  source   = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/network-security-group?ref=v1.4.0"
 
   basename = "nsg-${var.prefix}-${var.postfix}"
   location = module.resource_group.location
@@ -45,7 +45,7 @@ module "network_security_group" {
 }
 
 module "subnet_adb_public" {
-  source            = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=main"
+  source            = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=v1.4.0"
 
   name              = "snet-${var.prefix}-${var.postfix}-adb-public"
   rg_name           = module.resource_group.name
@@ -63,14 +63,14 @@ module "subnet_adb_public" {
 }
 
 module "subnet_adb_public_security_group_association" {
-  source                    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet-network-security-group-association?ref=main"
+  source                    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet-network-security-group-association?ref=v1.4.0"
 
   subnet_id                 = module.subnet_adb_public.id
   network_security_group_id = module.network_security_group.id
 }
 
 module "subnet_adb_private" {
-  source            = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=main"
+  source            = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=v1.4.0"
 
   name              = "snet-${var.prefix}-${var.postfix}-adb-private"
   rg_name           = module.resource_group.name
@@ -88,7 +88,7 @@ module "subnet_adb_private" {
 }
 
 module "subnet_adb_private_security_group_association" {
-  source                    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet-network-security-group-association?ref=main"
+  source                    = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet-network-security-group-association?ref=v1.4.0"
 
   subnet_id                 = module.subnet_adb_private.id
   network_security_group_id = module.network_security_group.id

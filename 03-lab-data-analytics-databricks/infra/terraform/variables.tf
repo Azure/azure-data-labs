@@ -62,3 +62,9 @@ variable "enable_event_hub_namespace" {
   description = "Variable to enable or disable the module"
   default     = false
 }
+
+variable "enable_cosmosdb" {
+  type        = bool
+  description = "Variable to enable or disable the module"
+  default     = false
+}

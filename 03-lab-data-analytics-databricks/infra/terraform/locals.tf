@@ -4,7 +4,7 @@ locals {
     Project     = "Azure Data Labs"
     Environment = "dev"
     Toolkit     = "Terraform"
-    Template    = "data-insights-syn"
+    Template    = "data-analytics-databricks"
     Name        = "${var.prefix}"
   }
 
@@ -20,11 +20,12 @@ locals {
     "privatelink.datafactory.azure.net",
     "privatelink.adf.azure.com",
     "privatelink.database.windows.net",
-    "privatelink.azuredatabricks.net"
+    "privatelink.azuredatabricks.net",
+    "privatelink.documents.azure.com"
   ]
 
-  safe_prefix  = replace(var.prefix, "-", "")
-  safe_postfix = replace(var.postfix, "-", "")
-
-  basename = "${var.prefix}-${var.postfix}"
+  safe_prefix   = replace(var.prefix, "-", "")
+  safe_postfix  = replace(var.postfix, "-", "")
+  basename      = "${var.prefix}-${var.postfix}"
+  safe_basename = "${local.safe_prefix}${local.safe_postfix}"
 }

@@ -1,0 +1,96 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: "Template:03-lab-data-analytics-databricks"
+
+on: 
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  variables_path: "./03-lab-data-analytics-azureml/config-lab.yml"
+  terraform_workingdir: "./03-lab-data-analytics-databricks/infra/terraform"
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Create storage account
+  create-storage-account:
+    name: Create Storage Account for Terraform
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Environment Variables
+        uses: ./.github/actions/set-env-variables
+        with:
+          variablesPath: ${{ env.variables_path }}
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Create Resource Group
+        uses: ./.github/actions/create-resource-group
+
+      - name: Create Storage Account
+        uses: ./.github/actions/create-storage-account
+
+      - name: Create Storage Container
+        uses: ./.github/actions/create-storage-container
+
+  # Deploy lab
+  deploy-lab:
+    name: Deploy Lab
+    needs:
+      - create-storage-account
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ${{ env.terraform_workingdir }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 'latest'
+
+      - name: Set Environment Variables
+        uses: ./.github/actions/set-env-variables
+        with:
+          variablesPath: ${{ env.variables_path }}
+        
+      - name: Terraform Format
+        uses: ./.github/actions/run-terraform-format
+
+      - name: Terraform Init
+        uses: ./.github/actions/run-terraform-init
+
+      - name: Terraform Validate
+        uses: ./.github/actions/run-terraform-validate
+
+      - name: Terraform Plan
+        run: terraform plan -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_private_endpoints=${{ env.enable_private_endpoints }}" -var "public_network_enabled=${{ env.public_network_enabled }}" -var "enable_ip_access_list=${{ env.enable_ip_access_list }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_data_factory=${{ env.enable_data_factory }}" -var "enable_event_hub_namespace=${{ env.enable_event_hub_namespace }}" -var "enable_cosmosdb=${{ env.enable_cosmosdb }}"
+        working-directory: ${{ env.terraform_workingdir }} 
+        shell: bash
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_private_endpoints=${{ env.enable_private_endpoints }}" -var "public_network_enabled=${{ env.public_network_enabled }}" -var "enable_ip_access_list=${{ env.enable_ip_access_list }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_data_factory=${{ env.enable_data_factory }}" -var "enable_event_hub_namespace=${{ env.enable_event_hub_namespace }}" -var "enable_cosmosdb=${{ env.enable_cosmosdb }}"
+        working-directory: ${{ env.terraform_workingdir }} 
+        shell: bash

@@ -1,4 +1,4 @@
-# Azure Data Labs • Create Repository
+# Deploy a Lab • Create Repository
 
 First, you must generate your own respository based on this template respository. To do so, please follow the steps below:
 

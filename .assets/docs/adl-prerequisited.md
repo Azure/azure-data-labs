@@ -1,4 +1,4 @@
-# Azure Data Labs • Prerequisites
+# Deploy a Lab • Prerequisites
 
 ### Prerequisites
 

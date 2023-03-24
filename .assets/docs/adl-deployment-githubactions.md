@@ -1,4 +1,4 @@
-# Azure Data Labs • GitHub Actions Deployment
+# Deploy a Lab • GitHub Actions Deployment
 
 In the previous step we have generated a JSON output similar to the following while creating the Service Principal. This will be required in the next steps.
 

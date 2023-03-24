@@ -1,4 +1,4 @@
-# Azure Data Labs • Setting up Service Principal
+# Deploy a Lab • Setting up Service Principal
 
 A service principal with `Contributor`, `User Access Administrator`, `Private DNS Zone Contributor` and `Network Contributor` rights needs to be generated for authentication and authorization from GitHub to your Azure subscription. This is required to deploy resources to your environment.
 

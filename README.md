@@ -4,12 +4,6 @@ Welcome to Azure Data Labs solution accelerator repository! This project is inte
 
 > Note: This repo uses [Azure Data Labs modules repository](https://github.com/Azure/azure-data-labs-modules) within the /infra folder on each template. Follow the 'Create a New Template' guide below to know more.
 
-Each template provides the following features:
-
-- `infra` folder: includes IaC to deploy the required Azure resources of a lab
-- `samples` folder:  samples to start with on a lab
-- `config-lab.yml` file:  lab deployment config file
-
 ## Available Templates
 
 | Name | Status |

@@ -33,7 +33,7 @@ To deploy a lab in your Azure subscription, please follow the step-by-step instr
 To create a new template from scratch, please follow the instructions below:
 
 1. [Settting up folder structure for the new template](./.assets/docs/create-template/adl-folder-structure.md)
-2. [Compose the IaC using modules](./.assets/docs/new-template/adl-compose-template.md)
+2. [Compose the IaC using modules](./.assets/docs/create-template/adl-compose-template.md)
 3. [Create GitHub Actions workflow and config-lab.yml](./.assets/docs/create-template/adl-template-deployment.md)
 
 ## Contributing

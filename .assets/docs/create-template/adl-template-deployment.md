@@ -6,3 +6,5 @@ You deploy a lab using Terraform (as shown before) or using GitHub Actions workf
 - Create a new GitHub Actions workload. You can copy any of the existing workloads here, and change to appropiate folders/files.
 
 Once you push these changes your new workload will be available withing the Actions tab. You would be able to run it using a manual trigger.
+
+Done! Your lab is ready to be deploying from GitHub. 

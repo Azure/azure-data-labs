@@ -5,7 +5,7 @@ This template repository contains all templates to deploy a **secure Azure Datab
 This diagram contains the location of the resources within the different allocated resource groups.
 The dotted boxes indicate the resources that are deployed optionally if the correspondant module is enables through `enable_{optional-module}` flag (e.g. `enable_data_factory` variable enables the deployment of the Azure Data Factory resource)
 
-![Alt: Resource Diagram](./architecture/Data%20Analytics%20with%20Databricks%20-%20Resources%20-%20Solid.png "Resource Diagram")
+![Alt: Resource Diagram](./assets/img/Data%20Analytics%20with%20Databricks%20-%20Resources%20-%20Solid.png "Resource Diagram")
 
 ## What will be deployed?
 
@@ -35,7 +35,7 @@ This diagram contains the network flow of communications between agents and serv
 
 Take into account that although the Data Factory Managed Virtual Network is deployed when private endpoints are enabled, the creation of the private endpoint for Databricks showed in the diagram (and any other that may be needed for your use case) are not created by default and should be provisioned. You can check the list of [supported data sources and services](https://learn.microsoft.com/en-us/azure/data-factory/managed-virtual-network-private-endpoint#supported-data-sources-and-services) and see the details of each of them.
 
-![Alt: Private Endpoint Networking Diagram](./architecture/Data%20Analytics%20with%20Databricks%20-%20Networking%20-%20Solid.png " Private Endpoint Networking Diagram")
+![Alt: Private Endpoint Networking Diagram](./assets/img/Data%20Analytics%20with%20Databricks%20-%20Networking%20-%20Solid.png " Private Endpoint Networking Diagram")
 
 ### Notes
 
@@ -50,14 +50,14 @@ Take into account that although the Data Factory Managed Virtual Network is depl
 
 This template supports the following architectures:
 
-- 📘 [Batch scoring of Spark models on Azure Databricks](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/ai/batch-scoring-databricks)
-- 📘 [Ingestion, ETL, and stream processing pipelines with Azure Databricks](https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/ingest-etl-stream-with-adb)
-- 📘 [Stream processing with Azure Databricks](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/data/stream-processing-databricks)
-- 📘 [Build a delta lake to support ad hoc queries in online leisure and travel booking](https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/build-data-lake-support-adhoc-queries-online)
-- 📘 [DataOps for the modern data warehouse](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data-warehouse/dataops-mdw)
-- 📘 [Orchestrate MLOps by using Azure Databricks](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/ai/orchestrate-mlops-azure-databricks)
-- 📘 [Master data management with Profisee and Azure Data Factory](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/data/profisee-master-data-management-data-factory)
-- 📘 [Observability patterns and metrics for performance tuning](https://learn.microsoft.com/en-us/azure/architecture/databricks-monitoring/databricks-observability)
+- 📘 [Batch scoring of Spark models on Azure Databricks](https://learn.microsoft.com/en-us/azure/assets/img/reference-architectures/ai/batch-scoring-databricks)
+- 📘 [Ingestion, ETL, and stream processing pipelines with Azure Databricks](https://learn.microsoft.com/en-us/azure/assets/img/solution-ideas/articles/ingest-etl-stream-with-adb)
+- 📘 [Stream processing with Azure Databricks](https://learn.microsoft.com/en-us/azure/assets/img/reference-architectures/data/stream-processing-databricks)
+- 📘 [Build a delta lake to support ad hoc queries in online leisure and travel booking](https://learn.microsoft.com/en-us/azure/assets/img/solution-ideas/articles/build-data-lake-support-adhoc-queries-online)
+- 📘 [DataOps for the modern data warehouse](https://learn.microsoft.com/en-us/azure/assets/img/example-scenario/data-warehouse/dataops-mdw)
+- 📘 [Orchestrate MLOps by using Azure Databricks](https://learn.microsoft.com/en-us/azure/assets/img/reference-architectures/ai/orchestrate-mlops-azure-databricks)
+- 📘 [Master data management with Profisee and Azure Data Factory](https://learn.microsoft.com/en-us/azure/assets/img/reference-architectures/data/profisee-master-data-management-data-factory)
+- 📘 [Observability patterns and metrics for performance tuning](https://learn.microsoft.com/en-us/azure/assets/img/databricks-monitoring/databricks-observability)
 
 ## Additional resources
 
@@ -65,7 +65,7 @@ This template supports the following architectures:
 
 This diagram contains the network flow of communication between Databricks Control Plane, Databricks Data Plane and users when private endpoints are enabled (through the `enable_private_endpoints` flag).
 
-![Alt: Databricks Private Endpoint Networking Diagram](./architecture/Data%20Analytics%20with%20Databricks%20-%20Databricks%20connectivity%20-%20Solid.png "Databricks PE Networking Diagram")
+![Alt: Databricks Private Endpoint Networking Diagram](./assets/img/Data%20Analytics%20with%20Databricks%20-%20Databricks%20connectivity%20-%20Solid.png "Databricks PE Networking Diagram")
 
 ### References
 

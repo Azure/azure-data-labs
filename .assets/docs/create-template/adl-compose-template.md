@@ -27,4 +27,7 @@ Once you compose your template, you can test it locally before creating a GitHub
 - Clean up your environment by `terraform destroy -auto-approve`
 - git commit and push the branch to the GitHub repo
 
+
 At this stage, your new template is already on GitHub available to be deployed.
+
+>[Next >](./adl-template-deployment.md)

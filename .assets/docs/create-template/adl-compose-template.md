@@ -17,7 +17,7 @@ You can decide to keep multiple modules in single resource file, or have one ter
 2. Understand [Data Labs modules](https://github.com/Azure/azure-data-labs-modules) variables. If there is an existing azurerm variable/property not supported by a Azure Data Lab Module, feel free to open a [Pull Request](https://github.com/Azure/azure-data-labs-modules/pulls).
 3. Compose required Terraform files invoking required modules.
 
-**Local testing**
+**Local testing using Terraform**
 
 Once you compose your template, you can test it locally before creating a GitHub Actions as follows:
 

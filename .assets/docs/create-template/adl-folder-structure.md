@@ -9,7 +9,7 @@ Each template provides the following folders:
 
 To start creating a new template:
 
-1. Copy the temp-lab-da-demo folder which includes above-mentioned folders and files
+1. Copy the [temp-lab-da-demo](https://github.com/Azure/azure-data-labs/tree/main/temp-lab-ade-demo) folder which includes above-mentioned folders and files
 2. Rename that folder 
 3. Jump to /infra folder and start creating your infrastructure (IaC)
 

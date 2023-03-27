@@ -30,4 +30,5 @@ Once you compose your template, you can test it locally before creating a GitHub
 
 At this stage, your new template is already on GitHub available to be deployed.
 
+>[< Previous](./adl-folder-structure.md) &nbsp;&nbsp; | &nbsp;&nbsp; 
 >[Next >](./adl-template-deployment.md)

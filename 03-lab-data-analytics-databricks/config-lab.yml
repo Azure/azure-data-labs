@@ -4,7 +4,7 @@
 variables:
 
   # Global
-  prefix: "adl-03"
+  prefix: "adl03"
   postfix: "101"
   location: "northeurope"
 

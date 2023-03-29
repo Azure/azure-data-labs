@@ -11,7 +11,7 @@ permissions:
 
 env:
   variables_path: "./02-lab-data-science-azureml/config-lab.yml"
-  terraform_workingdir: "./02-lab-data-science-am/infra/terraform"
+  terraform_workingdir: "./02-lab-data-science-azureml/infra/terraform"
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   USER_OBJECT_ID: ${{ secrets.USER_OBJECT_ID }}
   USER_TENANT_ID: ${{ secrets.USER_TENANT_ID }}

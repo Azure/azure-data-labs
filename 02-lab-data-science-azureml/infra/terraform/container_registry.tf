@@ -3,16 +3,16 @@
 module "container_registry" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/container-registry"
 
-  basename      = local.safe_basename
-  rg_name       = module.resource_group.name
-  location      = module.resource_group.location
-  sku           = "Premium"
-  admin_enabled = true
+  basename            = local.safe_basename
+  resource_group_name = module.resource_group.name
+  location            = module.resource_group.location
+  sku                 = "Premium"
+  admin_enabled       = true
 
-  subnet_id            = module.subnet_default.id
-  private_dns_zone_ids = [module.private_dns_zones.list["privatelink.azurecr.io"].id]
+  subnet_id            = local.enable_private_endpoints ? module.subnet_default[0].id : null
+  private_dns_zone_ids = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.azurecr.io"].id] : null
 
-  is_sec_module = var.enable_private_endpoints
+  is_private_endpoint = local.enable_private_endpoints
 
   tags = local.tags
 }

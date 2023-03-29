@@ -37,7 +37,7 @@ locals {
 
   enable_private_endpoints        = local.config.variables.enable_private_endpoints != null ? local.config.variables.enable_private_endpoints : var.enable_private_endpoints
   enable_jumphost                 = local.config.variables.enable_jumphost != null ? local.config.variables.enable_jumphost : var.enable_jumphost
-  enable_synapse_sql_pool         = local.config.variables.enable_synapse_sql_pool != null ? local.config.variables.enable_synapse_sql_pool : var.enable_synapse_spark_pool
+  enable_synapse_sql_pool         = local.config.variables.enable_synapse_sql_pool != null ? local.config.variables.enable_synapse_sql_pool : var.enable_synapse_sql_pool
   enable_synapse_spark_pool       = local.config.variables.enable_synapse_spark_pool != null ? local.config.variables.enable_synapse_spark_pool : var.enable_synapse_spark_pool
   enable_data_factory             = local.config.variables.enable_data_factory != null ? local.config.variables.enable_data_factory : var.enable_data_factory
   enable_analysis_services_server = local.config.variables.enable_analysis_services_server != null ? local.config.variables.enable_analysis_services_server : var.enable_analysis_services_server

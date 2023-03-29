@@ -4,7 +4,7 @@ module "synapse_workspace" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/synapse/synapse-workspace"
 
   basename             = local.basename
-  rg_name              = module.resource_group.name
+  resource_group_name  = module.resource_group.name
   location             = module.resource_group.location
   adls_id              = module.storage_account_syn.adls_id
   storage_account_id   = module.storage_account_syn.id
@@ -23,8 +23,8 @@ module "synapse_workspace" {
     tenant_id = var.aad_login.tenant_id
   }
 
-  module_enabled = true
-  is_sec_module  = local.enable_private_endpoints
+  module_enabled      = true
+  is_private_endpoint = local.enable_private_endpoints
 
   tags = local.tags
 }
@@ -32,11 +32,12 @@ module "synapse_workspace" {
 # Synapse Private Link Hub
 
 module "synapse_private_link_hub" {
-  source = "github.com/Azure/azure-data-labs-modules/terraform/synapse/synapse-private-link-hub"
+  #source = "github.com/Azure/azure-data-labs-modules/terraform/synapse/synapse-private-link-hub"
+  source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/synapse/synapse-private-link-hub?ref=v1.5.0-beta"
 
-  basename = local.safe_basename
-  rg_name  = module.resource_group.name
-  location = local.location
+  basename            = local.safe_basename
+  resource_group_name = module.resource_group.name
+  location            = local.location
 
   subnet_id            = local.enable_private_endpoints ? module.subnet_default[0].id : null
   private_dns_zone_ids = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.azuresynapse.net"].id] : null

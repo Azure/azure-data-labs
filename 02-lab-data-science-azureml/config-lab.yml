@@ -5,7 +5,7 @@ variables:
 
   # Global
   prefix: "murggu"
-  postfix: "102"
+  postfix: "282"
   location: "northeurope"
 
   # Feature flags

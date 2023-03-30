@@ -13,8 +13,8 @@ module "machine_learning_workspace" {
 
   subnet_id = local.enable_private_endpoints ? module.subnet_default[0].id : null
   private_dns_zone_ids = local.enable_private_endpoints ? [
-    module.private_dns_zones.list["privatelink.api.azureml.ms"].id,
-    module.private_dns_zones.list["privatelink.notebooks.azure.net"].id
+    module.private_dns_zones[0].list["privatelink.api.azureml.ms"].id,
+    module.private_dns_zones[0].list["privatelink.notebooks.azure.net"].id
   ] : null
 
   public_network_access_enabled = true

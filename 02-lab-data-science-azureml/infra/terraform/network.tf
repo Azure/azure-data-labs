@@ -54,7 +54,7 @@ module "subnet_compute" {
 module "network_security_group_training" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/network-security-group"
 
-  basename            = local.basename
+  basename            = "nsg-${local.basename}-01"
   resource_group_name = module.resource_group.name
   location            = local.location
 

@@ -19,7 +19,6 @@ By navigating through the deployment steps, you will deploy the following resour
 | [Subnet](./infra/terraform/network.tf) | Yes | Includes three subnets `default` (10.0.1.0/24), `compute` (10.0.2.0/24) and `bastion` (10.0.10.0/27)
 | [Synapse Workspace](./infra/terraform/synapse.tf) | No | Enable by `enable_synapse_workspace`
 | [Synapse Spark Pool](./infra/terraform/synapse.tf) | No | Enable by `enable_synapse_spark_pool`
-| [Synapse SQL Pool](./infra/terraform/synapse.tf) | No | Enable by `enable_synapse_sql_pool`
 | [Jumphost (Windows)](./infra/terraform/jumphost.tf) | No | Includes Bastion, enable by `enable_jumphost`
 
 ### Secure deployment

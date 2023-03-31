@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  variables_path: "./03-lab-data-analytics-azureml/config-lab.yml"
+  variables_path: "./03-lab-data-analytics-databricks/config-lab.yml"
   terraform_workingdir: "./03-lab-data-analytics-databricks/infra/terraform"
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}

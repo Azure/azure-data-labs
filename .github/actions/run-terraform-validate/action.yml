@@ -1,0 +1,14 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: Terraform Validate
+description: --
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terraform Validate
+      id: validate
+      run: terraform validate -no-color
+      working-directory: ${{ env.terraform_workingdir }} 
+      shell: bash

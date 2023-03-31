@@ -1,0 +1,15 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: Create Storage Account
+description: --
+
+runs:
+  using: "composite"
+  steps:
+    - name: Create Resource Group
+      uses: azure/CLI@v1
+      with:
+        azcliversion: ${{ env.az_cli_version }}
+        inlineScript: |
+          az storage account create -n ${{ env.terraform_st_storage_account }} -g ${{ env.terraform_st_resource_group }} -l ${{ env.location }} --sku Standard_LRS

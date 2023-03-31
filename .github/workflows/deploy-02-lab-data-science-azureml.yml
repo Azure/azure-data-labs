@@ -1,0 +1,99 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: "Template:02-lab-data-science-azureml"
+
+on: 
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  variables_path: "./02-lab-data-science-azureml/config-lab.yml"
+  terraform_workingdir: "./02-lab-data-science-azureml/infra/terraform"
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  USER_OBJECT_ID: ${{ secrets.USER_OBJECT_ID }}
+  USER_TENANT_ID: ${{ secrets.USER_TENANT_ID }}
+  USER_EMAIL: ${{ secrets.USER_EMAIL }}
+  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Create storage account
+  create-storage-account:
+    name: Create Storage Account for Terraform
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Environment Variables
+        uses: ./.github/actions/set-env-variables
+        with:
+          variablesPath: ${{ env.variables_path }}
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Create Resource Group
+        uses: ./.github/actions/create-resource-group
+
+      - name: Create Storage Account
+        uses: ./.github/actions/create-storage-account
+
+      - name: Create Storage Container
+        uses: ./.github/actions/create-storage-container
+
+  # Deploy lab
+  deploy-lab:
+    name: Deploy Lab
+    needs:
+      - create-storage-account
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ${{ env.terraform_workingdir }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 'latest'
+
+      - name: Set Environment Variables
+        uses: ./.github/actions/set-env-variables
+        with:
+          variablesPath: ${{ env.variables_path }}
+        
+      - name: Terraform Format
+        uses: ./.github/actions/run-terraform-format
+
+      - name: Terraform Init
+        uses: ./.github/actions/run-terraform-init
+
+      - name: Terraform Validate
+        uses: ./.github/actions/run-terraform-validate
+
+      - name: Terraform Plan
+        run: terraform plan -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_synapse_workspace=${{ env.enable_synapse_workspace }}" -var "enable_machine_learning_synapse_spark=${{ env.enable_machine_learning_synapse_spark }}" -var "enable_machine_learning_compute_cluster=${{ env.enable_machine_learning_compute_cluster }}" -var "aad_login={\"name\"=\"${{ env.USER_EMAIL }}\", \"object_id\"=\"${{ env.USER_OBJECT_ID }}\", \"tenant_id\"=\"${{ env.USER_TENANT_ID }}\"}"
+        working-directory: ${{ env.terraform_workingdir }} 
+        shell: bash
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_synapse_workspace=${{ env.enable_synapse_workspace }}" -var "enable_machine_learning_synapse_spark=${{ env.enable_machine_learning_synapse_spark }}" -var "enable_machine_learning_compute_cluster=${{ env.enable_machine_learning_compute_cluster }}" -var "aad_login={\"name\"=\"${{ env.USER_EMAIL }}\", \"object_id\"=\"${{ env.USER_OBJECT_ID }}\", \"tenant_id\"=\"${{ env.USER_TENANT_ID }}\"}"
+        working-directory: ${{ env.terraform_workingdir }} 
+        shell: bash

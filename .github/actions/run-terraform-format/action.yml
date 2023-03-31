@@ -1,0 +1,13 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: Terraform Format
+description: --
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terraform Format
+      run: terraform fmt -check
+      working-directory: ${{ env.terraform_workingdir }} 
+      shell: bash

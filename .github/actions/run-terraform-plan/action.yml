@@ -1,0 +1,13 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: Terraform Plan
+description: --
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terraform Plan
+      run: terraform plan -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}"
+      working-directory: ${{ env.terraform_workingdir }} 
+      shell: bash

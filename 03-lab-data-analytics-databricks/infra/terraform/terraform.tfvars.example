@@ -1,0 +1,21 @@
+# Resource name prefix
+prefix                     = "data-01"
+
+# Deployment location
+location                   = "North Europe"
+
+# Postfix
+postfix                    = "101"
+
+# Jumpbox login credentials
+jumphost_username          = "azureuser"
+jumphost_password          = "ThisIsNotVerySecure!"
+
+# Feature flags
+enable_private_endpoints   = "true"
+public_network_enabled     = "true"
+enable_ip_access_list      = "true"
+enable_jumphost            = "true"
+enable_data_factory        = "true"
+enable_event_hub_namespace = "true"
+enable_cosmosdb            = "true"

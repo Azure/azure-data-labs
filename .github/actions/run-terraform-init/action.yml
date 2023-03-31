@@ -1,0 +1,16 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: Terraform Init
+description: --
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terraform Init
+      run: |
+        git config --local --remove-section http."https://github.com/"
+        git config --global url."https://foo:${{ env.GH_TOKEN }}@github.com/Azure".insteadOf "https://github.com/Azure"
+        terraform init --backend-config="storage_account_name=${{ env.terraform_st_storage_account }}" --backend-config="container_name=${{ env.terraform_st_container_name }}" --backend-config="resource_group_name=${{ env.terraform_st_resource_group }}" --backend-config="key=${{ env.prefix }}-${{ env.postfix }}"
+      working-directory: ${{ env.terraform_workingdir }} 
+      shell: bash

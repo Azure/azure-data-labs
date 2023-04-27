@@ -68,3 +68,9 @@ variable "enable_cosmosdb" {
   description = "Variable to enable or disable the module"
   default     = false
 }
+
+variable "enable_data_explorer" {
+  type        = bool
+  description = "Variable to enable or disable the module"
+  default     = true
+}

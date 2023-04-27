@@ -7,6 +7,8 @@ module "cosmosdb-account" {
 
   module_enabled = var.enable_cosmosdb
 
+  public_network_access_enabled = var.public_network_enabled
+
   tags = local.tags
 }
 

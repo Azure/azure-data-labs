@@ -2,6 +2,7 @@
 
 module "databricks_workspace" {
   source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/databricks/databricks-workspace/?ref=v1.5.0&depth=1"
+  #source = "../../../../azure-data-labs-modules/terraform/databricks/databricks-workspace/"
   # Base config
   basename            = local.basename
   resource_group_name = module.resource_group.name

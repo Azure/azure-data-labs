@@ -21,7 +21,8 @@ locals {
     "privatelink.adf.azure.com",
     "privatelink.database.windows.net",
     "privatelink.azuredatabricks.net",
-    "privatelink.documents.azure.com"
+    "privatelink.documents.azure.com",
+    "privatelink.${var.location}.kusto.windows.net"
   ]
 
   safe_prefix   = replace(var.prefix, "-", "")

@@ -18,8 +18,9 @@ module "storage_account_adb" {
   firewall_ip_rules       = [data.http.ip.body]
   firewall_bypass         = ["AzureServices"]
 
-  module_enabled      = true
-  is_private_endpoint = var.enable_private_endpoints
+  module_enabled                = true
+  is_private_endpoint           = var.enable_private_endpoints
+  public_network_access_enabled = var.public_network_enabled
 
   tags = local.tags
 }

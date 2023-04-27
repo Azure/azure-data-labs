@@ -16,6 +16,11 @@ variables:
   enable_data_factory: "true"
   enable_event_hub_namespace: "true"
   enable_cosmosdb: "true"
+  enable_data_explorer: "true"
+
+  # Jumphost settings
+  jumphost_username: "adladmin"
+  jumpbox_password: "P@ssw0rd1234!"
 
   # Terraform remote storage
   terraform_st_resource_group: rg-adl-terraform-state

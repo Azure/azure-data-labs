@@ -2,7 +2,7 @@ name: Data Science AML
 summary: Terraform example for Lab 2 - Data Science with Azure Machine Learning
 description: Deploys an environment using Terraform containing a resource group
 runner: Terraform
-templatePath: ./infra/terraform/main.tf
+templatePath: main.tf
 parameters: 
 - id: "prefix"
   name: "Prefix"

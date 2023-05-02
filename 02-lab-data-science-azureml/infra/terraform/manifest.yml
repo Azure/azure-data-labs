@@ -1,4 +1,4 @@
-name: Data Science AML
+name: DataScienceAML
 summary: Terraform example for Lab 2 - Data Science with Azure Machine Learning
 description: Deploys an environment using Terraform containing a resource group
 runner: Terraform

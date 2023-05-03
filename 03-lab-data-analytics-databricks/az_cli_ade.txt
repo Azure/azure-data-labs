@@ -1,0 +1,9 @@
+az login -t 72f988bf-86f1-41af-91ab-2d7cd011db47
+
+az account set -s 3de261df-f2d8-4c00-a0ee-a0be30f1e48e
+
+az devcenter dev environment create --dev-center dc-jarewert-euap \
+--project-name proj-jarewert-euap-03 -n env-jodocamp-cli-adl-lab03 --environment-type Prod \
+--catalog-item-name AzureDataLabsDatabricksDemo --catalog-name jodocamp \
+--parameters "{ 'prefix': 'adl03', 'postfix': '101', 'location': 'centralus' }" \
+--user-id me

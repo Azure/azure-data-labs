@@ -89,5 +89,5 @@ variable "enable_machine_learning_compute_cluster" {
 variable "resource_group_name" {
   type        = string
   description = "Variable for ADE based deployment"
-  default = "rg-j6de-001342"
+  default     = "rg-j6de-001342"
 }

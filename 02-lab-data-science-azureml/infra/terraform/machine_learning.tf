@@ -4,8 +4,8 @@ module "machine_learning_workspace" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-workspace"
 
   basename                = local.basename
-  resource_group_name     = module.resource_group.name
-  location                = module.resource_group.location
+  resource_group_name     = local.resource_group_name
+  location                = local.location
   storage_account_id      = module.storage_account_mlw.id
   key_vault_id            = module.key_vault.id
   application_insights_id = module.application_insights.id
@@ -31,7 +31,7 @@ module "machine_learning_synapse_spark" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-synapse-spark"
 
   basename                      = local.postfix
-  location                      = module.resource_group.location
+  location                      = local.location
   machine_learning_workspace_id = module.machine_learning_workspace.id
   synapse_spark_pool_id         = module.synapse_spark_pool.id
 
@@ -44,7 +44,7 @@ module "machine_learning_compute_cluster_image-builder" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
 
   basename                      = "image-builder"
-  location                      = module.resource_group.location
+  location                      = local.location
   subnet_id                     = local.enable_private_endpoints ? module.subnet_compute[0].id : null
   machine_learning_workspace_id = module.machine_learning_workspace.id
 
@@ -55,7 +55,7 @@ module "machine_learning_compute_cluster_cpu_cluster" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/machine-learning/machine-learning-compute-cluster"
 
   basename                      = "cpu-cluster"
-  location                      = module.resource_group.location
+  location                      = local.location
   subnet_id                     = local.enable_private_endpoints ? module.subnet_compute[0].id : null
   machine_learning_workspace_id = module.machine_learning_workspace.id
 

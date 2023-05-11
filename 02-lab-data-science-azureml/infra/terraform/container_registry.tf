@@ -4,8 +4,8 @@ module "container_registry" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/container-registry"
 
   basename            = local.safe_basename
-  resource_group_name = module.resource_group.name
-  location            = module.resource_group.location
+  resource_group_name = local.resource_group_name
+  location            = local.location
   sku                 = "Premium"
   admin_enabled       = true
 

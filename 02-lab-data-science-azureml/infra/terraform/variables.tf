@@ -85,3 +85,9 @@ variable "enable_machine_learning_compute_cluster" {
   description = "Variable to enable or disable the module"
   default     = true
 }
+
+variable "resource_group_name" {
+  type        = string
+  description = "Variable for ADE based deployment"
+  default = "rg-j6de-001342"
+}

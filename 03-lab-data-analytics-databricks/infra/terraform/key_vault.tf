@@ -4,8 +4,8 @@ module "key_vault" {
   source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/key-vault?ref=v1.5.0&depth=1"
 
   basename                 = local.basename
-  resource_group_name      = module.resource_group.name
-  location                 = module.resource_group.location
+  resource_group_name      = local.resource_group_name
+  location                 = local.location
   sku_name                 = "premium"
   purge_protection_enabled = false
 

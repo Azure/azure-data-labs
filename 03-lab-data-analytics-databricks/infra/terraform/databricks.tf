@@ -1,11 +1,11 @@
 # Databricks workspace
 
 module "databricks_workspace" {
-  source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/databricks/databricks-workspace/?ref=v1.5.0&depth=1"
+  source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/databricks/databricks-workspace/?ref=main"
   # Base config
   basename            = local.basename
-  resource_group_name = module.resource_group.name
-  location            = module.resource_group.location
+  resource_group_name = local.resource_group_name
+  location            = local.location
   module_enabled      = true
   # Vnet config
   virtual_network_id                                   = module.virtual_network.id

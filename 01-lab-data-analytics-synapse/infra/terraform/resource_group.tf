@@ -6,6 +6,8 @@ module "resource_group" {
   basename = local.basename
   location = local.location
 
+  count = local.enable_ade_deployment ? 0 : 1
+
   tags = local.tags
 }
 

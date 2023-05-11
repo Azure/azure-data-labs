@@ -5,8 +5,8 @@ module "data_factory" {
   source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/data-factory/data-factory?ref=v1.5.0-beta"
 
   basename            = local.basename
-  resource_group_name = module.resource_group.name
-  location            = module.resource_group.location
+  resource_group_name = local.resource_group_name
+  location            = local.location
 
   subnet_id                   = local.enable_private_endpoints ? module.subnet_default[0].id : null
   private_dns_zone_ids_df     = local.enable_private_endpoints ? [module.private_dns_zones[0].list["privatelink.datafactory.azure.net"].id] : null

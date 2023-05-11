@@ -2,7 +2,7 @@
 prefix                     = "data-01"
 
 # Deployment location
-location                   = "North Europe"
+location                   = "northeurope"
 
 # Postfix
 postfix                    = "101"
@@ -19,3 +19,4 @@ enable_jumphost            = "true"
 enable_data_factory        = "true"
 enable_event_hub_namespace = "true"
 enable_cosmosdb            = "true"
+enable_data_explorer       = "true"

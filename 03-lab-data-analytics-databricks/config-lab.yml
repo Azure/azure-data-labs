@@ -9,13 +9,17 @@ variables:
   location: "northeurope"
 
   # Feature flags
-  enable_private_endpoints: "true"
-  public_network_enabled : "true"
-  enable_ip_access_list: "true"
-  enable_jumphost: "true"
-  enable_data_factory: "true"
-  enable_event_hub_namespace: "true"
-  enable_cosmosdb: "true"
+  enable_private_endpoints: "false"
+  public_network_enabled : "false"
+  enable_ip_access_list: "false"
+  enable_jumphost: "false"
+  enable_data_factory: "false"
+  enable_event_hub_namespace: "false"
+  enable_cosmosdb: "false"
+  enable_data_explorer: "false"
+
+  # Enable ADE based deployment
+  enable_ade_deployment: "true"
 
   # Terraform remote storage
   terraform_st_resource_group: rg-adl-terraform-state

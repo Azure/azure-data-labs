@@ -86,11 +86,11 @@ jobs:
         uses: ./.github/actions/run-terraform-validate
 
       - name: Terraform Plan
-        run: terraform plan -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_data_factory=${{ env.enable_data_factory }}" -var "enable_event_hub_namespace=${{ env.enable_event_hub_namespace }}" -var "enable_cosmosdb=${{ env.enable_cosmosdb }}" -var "enable_private_endpoints=${{ env.enable_private_endpoints }}" -var "public_network_enabled=${{ env.public_network_enabled }}" -var "enable_ip_access_list=${{ env.enable_ip_access_list }}"
+        run: terraform plan -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_data_factory=${{ env.enable_data_factory }}" -var "enable_event_hub_namespace=${{ env.enable_event_hub_namespace }}" -var "enable_cosmosdb=${{ env.enable_cosmosdb }}" -var "enable_private_endpoints=${{ env.enable_private_endpoints }}" -var "public_network_enabled=${{ env.public_network_enabled }}" -var "enable_ip_access_list=${{ env.enable_ip_access_list }}" -var "enable_data_explorer=${{ env.enable_data_explorer }}"
         working-directory: ${{ env.terraform_workingdir }} 
         shell: bash
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_data_factory=${{ env.enable_data_factory }}" -var "enable_event_hub_namespace=${{ env.enable_event_hub_namespace }}" -var "enable_cosmosdb=${{ env.enable_cosmosdb }}" -var "enable_private_endpoints=${{ env.enable_private_endpoints }}" -var "public_network_enabled=${{ env.public_network_enabled }}" -var "enable_ip_access_list=${{ env.enable_ip_access_list }}"
+        run: terraform apply -auto-approve -var "location=${{ env.location }}" -var "prefix=${{ env.prefix }}" -var "postfix=${{ env.postfix }}" -var "enable_jumphost=${{ env.enable_jumphost }}" -var "enable_data_factory=${{ env.enable_data_factory }}" -var "enable_event_hub_namespace=${{ env.enable_event_hub_namespace }}" -var "enable_cosmosdb=${{ env.enable_cosmosdb }}" -var "enable_private_endpoints=${{ env.enable_private_endpoints }}" -var "public_network_enabled=${{ env.public_network_enabled }}" -var "enable_ip_access_list=${{ env.enable_ip_access_list }}" -var "enable_data_explorer=${{ env.enable_data_explorer }}"
         working-directory: ${{ env.terraform_workingdir }} 
         shell: bash

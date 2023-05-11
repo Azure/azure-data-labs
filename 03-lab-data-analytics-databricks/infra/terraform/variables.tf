@@ -72,7 +72,7 @@ variable "enable_cosmosdb" {
 variable "enable_data_explorer" {
   type        = bool
   description = "Variable to enable or disable the module"
-  default     = true
+  default     = false
 }
 
 # ADE Integration
@@ -80,5 +80,5 @@ variable "enable_data_explorer" {
 variable "resource_group_name" {
   type        = string
   description = "Variable for ADE based deployment"
-  default     = "rg-ade-environment"
+  default     = "rg-ade-lab03"
 }

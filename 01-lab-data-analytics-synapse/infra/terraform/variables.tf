@@ -97,3 +97,9 @@ variable "enable_event_hub" {
   description = "Variable to enable or disable the module"
   default     = false
 }
+
+variable "resource_group_name" {
+  type        = string
+  description = "Variable for ADE based deployment"
+  default     = "rg-j6de-001442"
+}

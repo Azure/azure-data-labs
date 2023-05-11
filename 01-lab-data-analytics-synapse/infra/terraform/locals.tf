@@ -31,9 +31,10 @@ locals {
 
   config = yamldecode(file("${path.module}/../../config-lab.yml"))
 
-  location = local.config.variables.location != null ? local.config.variables.location : var.location
-  prefix   = local.config.variables.prefix != null ? local.config.variables.prefix : var.prefix
-  postfix  = local.config.variables.postfix != null ? local.config.variables.postfix : var.postfix
+  resource_group_name = local.config.variables.enable_ade_deployment == "true" ? var.resource_group_name : length(module.resource_group) > 0 ? module.resource_group[0].name : ""
+  location            = local.config.variables.location != null ? local.config.variables.location : var.location
+  prefix              = local.config.variables.prefix != null ? local.config.variables.prefix : var.prefix
+  postfix             = local.config.variables.postfix != null ? local.config.variables.postfix : var.postfix
 
   enable_private_endpoints        = local.config.variables.enable_private_endpoints != null ? local.config.variables.enable_private_endpoints : var.enable_private_endpoints
   enable_jumphost                 = local.config.variables.enable_jumphost != null ? local.config.variables.enable_jumphost : var.enable_jumphost
@@ -42,4 +43,6 @@ locals {
   enable_data_factory             = local.config.variables.enable_data_factory != null ? local.config.variables.enable_data_factory : var.enable_data_factory
   enable_analysis_services_server = local.config.variables.enable_analysis_services_server != null ? local.config.variables.enable_analysis_services_server : var.enable_analysis_services_server
   enable_event_hub                = local.config.variables.enable_event_hub != null ? local.config.variables.enable_event_hub : var.enable_event_hub
+
+  enable_ade_deployment = local.config.variables.enable_ade_deployment
 }

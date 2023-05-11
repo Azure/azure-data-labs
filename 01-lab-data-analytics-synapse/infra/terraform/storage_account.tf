@@ -4,8 +4,8 @@ module "storage_account_syn" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/storage-account"
 
   basename            = "${local.safe_basename}syn"
-  resource_group_name = module.resource_group.name
-  location            = module.resource_group.location
+  resource_group_name = local.resource_group_name
+  location            = local.location
   account_tier        = "Standard"
 
   subnet_id                 = local.enable_private_endpoints ? module.subnet_default[0].id : null

@@ -4,8 +4,8 @@ module "synapse_workspace" {
   source = "github.com/Azure/azure-data-labs-modules/terraform/synapse/synapse-workspace"
 
   basename             = local.basename
-  resource_group_name  = module.resource_group.name
-  location             = module.resource_group.location
+  resource_group_name  = local.resource_group_name
+  location             = local.location
   adls_id              = module.storage_account_syn.adls_id
   storage_account_id   = module.storage_account_syn.id
   storage_account_name = module.storage_account_syn.name
@@ -36,7 +36,7 @@ module "synapse_private_link_hub" {
   source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/synapse/synapse-private-link-hub?ref=v1.5.0-beta"
 
   basename            = local.safe_basename
-  resource_group_name = module.resource_group.name
+  resource_group_name = local.resource_group_name
   location            = local.location
 
   subnet_id            = local.enable_private_endpoints ? module.subnet_default[0].id : null

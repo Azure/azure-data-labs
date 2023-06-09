@@ -30,24 +30,20 @@ module "hdinsight_spark" {
   managed_identity_resource_id  = module.user_assigned_identity.id
   managed_identity_principal_id = module.user_assigned_identity.principal_id
 
-  ambari_server_name                           = join("", [module.sql_server.name, ".database.windows.net"])
-  ambari_database_name                         = azurerm_sql_database.hdi_sqldb_metastore["ambari"].name #module.sql_db["ambari"].name
+  ambari_server_name                           = module.sql_server.name
+  ambari_database_name                         = module.sql_db["ambari"].name
   ambari_database_administrator_login          = var.administrator_login
   ambari_database_administrator_login_password = var.administrator_login_password
 
-  hive_server_name                           = join("", [module.sql_server.name, ".database.windows.net"])
-  hive_database_name                         = azurerm_sql_database.hdi_sqldb_metastore["hive"].name #module.sql_db["hive"].name
+  hive_server_name                           = module.sql_server.name
+  hive_database_name                         = module.sql_db["hive"].name
   hive_database_administrator_login          = var.administrator_login
   hive_database_administrator_login_password = var.administrator_login_password
 
-  oozie_server_name                           = join("", [module.sql_server.name, ".database.windows.net"])
-  oozie_database_name                         = azurerm_sql_database.hdi_sqldb_metastore["oozie"].name #module.sql_db["oozie"].name
+  oozie_server_name                           = module.sql_server.name
+  oozie_database_name                         = module.sql_db["oozie"].name
   oozie_database_administrator_login          = var.administrator_login
   oozie_database_administrator_login_password = var.administrator_login_password
 
   tags = local.tags
-
-  # depends_on = [
-  #   azurerm_role_assignment.hdi_st_role_id_sbdc
-  # ]
 }

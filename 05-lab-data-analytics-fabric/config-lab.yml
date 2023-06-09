@@ -5,7 +5,7 @@ variables:
 
   # Global
   prefix: "36dlf"
-  postfix: "fac2"
+  postfix: "fab1"
   location: "northeurope"
 
   # Feature flags

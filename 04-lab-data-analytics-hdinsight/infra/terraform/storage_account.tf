@@ -24,8 +24,8 @@ module "storage_account" {
   tags = local.tags
 }
 
-# resource "azurerm_role_assignment" "hdi_st_role_id_sbdc" {
-#   scope                = module.storage_account.id
-#   role_definition_name = "Storage Blob Data Owner"
-#   principal_id         = module.user_assigned_identity.principal_id
-# }
+/* resource "azurerm_role_assignment" "hdi_st_role_id_sbdc" {
+  scope                = module.storage_account.id
+  role_definition_name = "Storage Blob Data Owner"
+  principal_id         = module.user_assigned_identity.principal_id
+} */

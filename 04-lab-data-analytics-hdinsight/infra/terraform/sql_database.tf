@@ -16,27 +16,27 @@ module "sql_server" {
   tags = local.tags
 }
 
-# module "sql_db" {
-#   source = "github.com/Azure/azure-data-labs-modules/terraform/sql-database"
+module "sql_db" {
+  source = "github.com/Azure/azure-data-labs-modules/terraform/sql-database"
 
-#   for_each  = var.metastore_sku
-#   basename  = join("", ["sqldb", local.safe_basename, each.key])
-#   server_id = module.sql_server.id
-
-#   tags = local.tags
-# }
-
-resource "azurerm_sql_database" "hdi_sqldb_metastore" {
-  for_each                         = var.metastore_sku
-  name                             = join("", ["sqldb", local.safe_prefix, local.safe_postfix, each.key])
-  resource_group_name              = local.resource_group_name
-  location                         = local.location
-  server_name                      = module.sql_server.name
-  edition                          = "Standard"
-  requested_service_objective_name = each.value
+  for_each  = var.metastore_sku
+  basename  = join("", ["sqldb", local.safe_basename, each.key])
+  server_id = module.sql_server.id
 
   tags = local.tags
 }
+
+# resource "azurerm_sql_database" "hdi_sqldb_metastore" {
+#   for_each                         = var.metastore_sku
+#   name                             = join("", ["sqldb", local.safe_prefix, local.safe_postfix, each.key])
+#   resource_group_name              = local.resource_group_name
+#   location                         = local.location
+#   server_name                      = module.sql_server.name
+#   edition                          = "Standard"
+#   requested_service_objective_name = each.value
+
+#   tags = local.tags
+# }
 
 resource "azurerm_sql_firewall_rule" "metastore_server_rule" {
   name                = "AllowAzureServices"

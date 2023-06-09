@@ -4,8 +4,8 @@
 variables:
 
   # Global
-  prefix: "36dgf"
-  postfix: "v9ce"
+  prefix: "adlt"
+  postfix: "021"
   location: "northeurope"
 
   # Feature flags
@@ -16,7 +16,7 @@ variables:
   enable_machine_learning_synapse_spark: "false"
 
   # Enable ADE based deployment
-  enable_ade_deployment: "true"
+  enable_ade_deployment: "false"
 
   # Terraform remote storage
   terraform_st_resource_group: rg-adl-terraform-state

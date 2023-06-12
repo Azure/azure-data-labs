@@ -4,8 +4,8 @@
 variables:
 
   # Global
-  prefix: "36dlf"
-  postfix: "hdi3"
+  prefix: "adlt"
+  postfix: "041"
   location: "northeurope"
 
   # Feature flags

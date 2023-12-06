@@ -25,6 +25,23 @@ module "subnet_default" {
   count = var.enable_private_endpoints ? 1 : 0
 }
 
+module "subnet_cicd" {
+  source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=v1.5.0&depth=1"
+
+  name                = "snet-${var.prefix}-${var.postfix}-cicd"
+  resource_group_name = local.resource_group_name
+  vnet_name           = module.virtual_network.name
+  address_prefixes    = ["10.0.4.0/24"]
+  subnet_delegation = { "adb-snet-del-cicd" : [{
+    name = "Microsoft.ContainerInstance/containerGroups",
+    actions = [
+      "Microsoft.Network/virtualNetworks/subnets/join/action", 
+      "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",
+    ]
+    }
+  ] }
+}
+
 module "subnet_bastion" {
   source = "git::https://github.com/Azure/azure-data-labs-modules.git//terraform/subnet?ref=v1.5.0&depth=1"
 

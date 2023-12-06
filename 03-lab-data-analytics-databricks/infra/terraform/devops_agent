@@ -1,0 +1,26 @@
+module "aci-devops-agent" {
+  source                   = "Azure/aci-devops-agent/azurerm"
+  version                  = "0.9.2"
+  resource_group_name      = "rg-linux-devops-agents"
+  location                 = "westeurope"
+  enable_vnet_integration  = true
+  create_resource_group    = true
+  vnet_resource_group_name = local.resource_group_name
+  vnet_name                = module.virtual_network.name
+  subnet_name              = module.subnet_adb_cicd.name
+
+  linux_agents_configuration = {
+    agent_name_prefix = "linux-agent"
+    agent_pool_name   = "DEVOPS_POOL_NAME"
+    count             = 2,
+    docker_image      = "jcorioland/aci-devops-agent"
+    docker_tag        = "0.2-linux"
+    cpu               = 1
+    memory            = 4
+    user_assigned_identity_ids   = []
+    use_system_assigned_identity = false
+  }
+
+  azure_devops_org_name              = "DEVOPS_ORG_NAME"
+  azure_devops_personal_access_token = "DEVOPS_PERSONAL_ACCESS_TOKEN"
+}

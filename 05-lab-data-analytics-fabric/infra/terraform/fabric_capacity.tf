@@ -8,7 +8,7 @@ module "fabric_capacity" {
   location          = local.location
 
   sku               = "F2"
-  admin_email       = "aimurg@microsoft.com"
+  admin_email       = "<>"
 
   tags = local.tags
 }
